@@ -15,6 +15,7 @@ from transformers import (
 )
 import wandb
 from tqdm import tqdm
+import subprocess
 
 class GomokuTrainer:
     def __init__(
@@ -48,6 +49,9 @@ class GomokuTrainer:
                 print("Training will continue without wandb logging.")
                 self.wandb_project = None
         
+        # Verify CUDA availability
+        self.check_gpu_availability()
+        
         # Load tokenizer and model
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.pad_token = self.tokenizer.eos_token
@@ -56,7 +60,7 @@ class GomokuTrainer:
         special_tokens = ["<board>", "</board>", "<move>", "</move>"]
         self.tokenizer.add_special_tokens({"additional_special_tokens": special_tokens})
         
-        # Load base model
+        # Load base model with explicit GPU settings
         self.model = AutoModelForCausalLM.from_pretrained(
             model_name,
             load_in_8bit=False,
@@ -64,9 +68,48 @@ class GomokuTrainer:
             device_map="auto",
         )
         
+        # Verify model is on correct device
+        if torch.cuda.is_available():
+            print(f"Model is on device: {next(self.model.parameters()).device}")
+        
         # Resize token embeddings for the added special tokens
         self.model.resize_token_embeddings(len(self.tokenizer))
         
+    def check_gpu_availability(self):
+        """Check if GPU is available and print GPU info."""
+        print("\n=== GPU Information ===")
+        print(f"PyTorch version: {torch.__version__}")
+        print(f"CUDA available: {torch.cuda.is_available()}")
+        
+        if torch.cuda.is_available():
+            print(f"CUDA version: {torch.version.cuda}")
+            print(f"Current CUDA device: {torch.cuda.current_device()}")
+            print(f"Number of GPUs: {torch.cuda.device_count()}")
+            for i in range(torch.cuda.device_count()):
+                print(f"GPU {i}: {torch.cuda.get_device_name(i)}")
+                print(f"GPU {i} memory: {torch.cuda.get_device_properties(i).total_memory / 1024**3:.2f} GB")
+            
+            # Run nvidia-smi for detailed GPU info
+            try:
+                print("\nnvidia-smi output:")
+                result = subprocess.run(["nvidia-smi"], stdout=subprocess.PIPE, text=True)
+                print(result.stdout)
+            except Exception as e:
+                print(f"Failed to run nvidia-smi: {e}")
+        else:
+            print("WARNING: CUDA is not available. Training will be on CPU only!")
+            print("Check your CUDA installation and environment variables.")
+            
+        print("=== End GPU Information ===\n")
+    
+    def monitor_gpu_usage(self):
+        """Monitor current GPU memory usage."""
+        if torch.cuda.is_available():
+            for i in range(torch.cuda.device_count()):
+                allocated = torch.cuda.memory_allocated(i) / 1024**3
+                reserved = torch.cuda.memory_reserved(i) / 1024**3
+                print(f"GPU {i} memory allocated: {allocated:.2f} GB, reserved: {reserved:.2f} GB")
+    
     def load_dataset(self):
         """Load the processed Gomoku dataset."""
         self.dataset = load_from_disk(self.data_dir)
@@ -148,17 +191,41 @@ class GomokuTrainer:
         self,
         output_name: str = "gomoku-gpt2",
         epochs: int = 3,
-        batch_size: int = 8,
-        gradient_accumulation_steps: int = 4,
-        learning_rate: float = 2e-5,  # Slightly higher learning rate for standard fine-tuning
+        batch_size: int = 16,
+        gradient_accumulation_steps: int = 1,
+        learning_rate: float = 2e-5, 
         warmup_steps: int = 100,
         max_grad_norm: float = 1.0,
-        fp16: bool = False,  # Disable FP16 training to avoid gradient scaling issues
+        fp16: bool = True,
         logging_steps: int = 50,
         save_steps: int = 500,
     ):
         """Train the model."""
-        # Training arguments - simplified for standard fine-tuning
+        # Force CUDA if available - MORE AGGRESSIVE APPROACH
+        if torch.cuda.is_available():
+            # Clear cache before training
+            torch.cuda.empty_cache()
+            
+            device = torch.device("cuda")
+            print(f"Using GPU device: {torch.cuda.get_device_name(device)}")
+            
+            # Force model to GPU and verify
+            if next(self.model.parameters()).device.type != 'cuda':
+                self.model = self.model.cuda()
+                print(f"Model forcibly moved to {next(self.model.parameters()).device}")
+            
+            # Run a small test tensor through the model to verify GPU usage
+            test_input = torch.randint(0, 100, (1, 10)).to(device)
+            with torch.no_grad():
+                _ = self.model(test_input)
+            print(f"Test forward pass successfully run on {device}")
+            
+            # Print memory usage after test
+            self.monitor_gpu_usage()
+        else:
+            print("WARNING: Training on CPU. This will be very slow!")
+        
+        # Training arguments - GPU OPTIMIZED
         training_args = TrainingArguments(
             output_dir=str(self.output_dir / output_name),
             num_train_epochs=epochs,
@@ -172,12 +239,18 @@ class GomokuTrainer:
             logging_steps=logging_steps,
             save_steps=save_steps,
             save_total_limit=3,
-            fp16=fp16,  # Now defaults to False
+            fp16=fp16,
+            fp16_full_eval=fp16,
+            tf32=True,  # Enable TF32 for faster computation on Ampere+ GPUs
             max_grad_norm=max_grad_norm,
-            report_to="none",  # Disable all reporting to avoid wandb issues
+            report_to="none",
             run_name=output_name,
-            optim="adamw_torch",  # Use PyTorch's AdamW instead of the transformers one
-            remove_unused_columns=False,  # Keep all columns
+            optim="adamw_torch",
+            remove_unused_columns=False,
+            dataloader_num_workers=4,
+            dataloader_pin_memory=True,
+            bf16=False,  # Disable bf16 as it's not needed with fp16
+            ddp_find_unused_parameters=False,  # Avoid unnecessary overhead
         )
         
         # Data collator for language modeling
@@ -196,9 +269,17 @@ class GomokuTrainer:
             tokenizer=self.tokenizer,
         )
         
+        # Monitor GPU before training
+        print("\nGPU status before training:")
+        self.monitor_gpu_usage()
+        
         # Start training
-        print("Starting training...")
+        print("\nStarting training...")
         trainer.train()
+        
+        # Monitor GPU after training
+        print("\nGPU status after training:")
+        self.monitor_gpu_usage()
         
         # Save the model
         trainer.save_model(str(self.output_dir / f"{output_name}_final"))
@@ -217,11 +298,15 @@ def main():
     parser.add_argument("--output_dir", type=str, default="models", help="Directory to save model checkpoints")
     parser.add_argument("--wandb_project", type=str, default=None, help="W&B project name (None to disable)")
     parser.add_argument("--epochs", type=int, default=3, help="Number of training epochs")
-    parser.add_argument("--batch_size", type=int, default=4, help="Training batch size (reduced to save memory)")
-    parser.add_argument("--lr", type=float, default=1e-5, help="Learning rate (lowered for stability)")
-    parser.add_argument("--frozen_layers", type=int, default=18, help="Number of frozen layers at the bottom (increased)")
+    parser.add_argument("--batch_size", type=int, default=16, help="Training batch size")
+    parser.add_argument("--lr", type=float, default=1e-5, help="Learning rate")
+    parser.add_argument("--frozen_layers", type=int, default=12, help="Number of frozen layers")
     
     args = parser.parse_args()
+    
+    # Set CUDA environment variables inside Python as well
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     
     trainer = GomokuTrainer(
         model_name=args.model,
