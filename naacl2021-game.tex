@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage[review]{naacl2021}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+
+\title{Project Proposal: Fine-Tuning GPT-2 for Game Decision-Making}
+\author{
+  Your Name \\
+  Department of Computer Science \\
+  Your University \\
+  \texttt{youremail@domain.edu} \And
+  Collaborator Name \\
+  Research Institution or Company \\
+  \texttt{collab@institution.com}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Title}
+Fine-Tuning GPT-2 for Game Decision-Making Using HuggingFace
+
+\section{Abstract}
+This proposal outlines a plan to fine-tune GPT-2 for game decision-making tasks, where the model will generate strategic decisions based on in-game states. By leveraging pretrained GPT-2 models from HuggingFace, we will focus on efficient fine-tuning strategies such as parameter-efficient tuning, selective layer freezing, and dynamic learning rate scheduling. Our goal is to create a lightweight solution that adapts GPT-2 to game environments, enabling efficient decision-making generation with minimal computational resources. The expected outcome is a specialized model that can assist in game AI development for turn-based strategy games.
+
+\section{Introduction}
+Recent advancements in large-scale language models, such as GPT-2, have demonstrated exceptional capabilities in a wide range of text generation tasks \citep{yoo2021gpt3mix}. However, the application of these models to decision-making in game environments is still an emerging area of research. Games, particularly those involving complex strategies and dynamic environments, require AI systems capable of making real-time decisions. Fine-tuning GPT-2 for this purpose can allow for more coherent, context-aware, and efficient decision-making by leveraging natural language processing models trained on game-specific data.
+
+In this project, we aim to adapt GPT-2 to generate game-related decisions. By using domain-specific datasets and optimizing fine-tuning techniques, we plan to reduce computational costs while improving model performance for game decision-making tasks.
+
+\section{Related Work}
+Game AI has traditionally relied on rule-based systems and search algorithms, such as Monte Carlo Tree Search (MCTS) \citep{_wiechowski_2022}, and reinforcement learning techniques \citep{lu2022techniques}. However, language models like GPT-2 have not yet been fully explored in this context. Previous work on fine-tuning GPT-2 for domain-specific tasks has shown promise in areas like technical writing and creative writing \citep{boynagryan2024ai}. However, adapting GPT-2 for decision-making in games requires novel strategies that blend both the creative capabilities of GPT-2 and the decision-making logic common in game AI.
+
+Techniques such as Low-Rank Adaptation (LoRA) \citep{zeng2023expressive} and gradient checkpointing \citep{singh2024study} will be explored to minimize the resource overhead associated with fine-tuning large models like GPT-2. These strategies are critical in making the fine-tuning process feasible on single-GPU systems, which is a limitation for many research teams and smaller organizations.
+
+\section{Pretrained Model and Dataset to Use}
+For this project, we propose to fine-tune the \texttt{gpt2-medium} model (774M parameters) from HuggingFace’s model hub. The \texttt{gpt2-medium} model strikes a balance between model capacity and computational feasibility, making it suitable for the resource-constrained environments typical in game AI development. We plan to focus specifically on turn-based games, which require sequential decision-making and strategic planning. To this end, we will experiment with the following datasets:
+
+\begin{itemize}
+    \item \textbf{Turn-Based Game Decision Data:} A custom dataset that includes decision logs from turn-based games, such as chess, Go, and strategy games. This dataset will contain examples of game states, player actions, and corresponding decisions made by human or AI players during their turns.
+    \item \textbf{Text-Based Turn-Based Game Narratives:} A collection of dialogues, scenarios, and in-game texts from text-based games and interactive fiction. This dataset will help GPT-2 understand narrative-driven decision-making processes in a turn-based context.
+\end{itemize}
+
+By selectively freezing layers and applying fine-tuning strategies focused on domain-specific data, we aim to achieve a high level of specialization without sacrificing generalization.
+
+\section{Expected Outcome}
+We anticipate that our fine-tuned GPT-2 models will:
+\begin{itemize}
+    \item Achieve notable improvements in game-related decision-making metrics (e.g., decision quality, relevance to game context, player satisfaction).
+    \item Reduce training resource requirements through efficient fine-tuning strategies, including gradient checkpointing, allowing the model to run on single-GPU systems.
+    \item Provide a reproducible framework for game AI development, with transparent hyperparameter configurations and evaluation protocols that can be utilized by other researchers and game developers.
+\end{itemize}
+Ultimately, we expect our approach to help game developers integrate advanced decision-making capabilities into their AI systems, enabling more realistic and adaptive in-game behavior.
+
+\bibliographystyle{acl_natbib}
+\bibliography{custom}
+
+\end{document}
