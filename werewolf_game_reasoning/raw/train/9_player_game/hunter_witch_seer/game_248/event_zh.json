@@ -1,0 +1,951 @@
+[
+    {
+        "content": {
+            "player": 5,
+            "role": "simple_villager",
+            "uid": 763538402720170
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 4,
+            "role": "witch",
+            "uid": 1097743185742336
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 7,
+            "role": "werewolf",
+            "uid": 1379205500120192
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 1,
+            "role": "simple_villager",
+            "uid": 1819069565122313
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 9,
+            "role": "werewolf",
+            "uid": 1959807053997755
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 8,
+            "role": "hunter",
+            "uid": 2681086683147540
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 6,
+            "role": "seer",
+            "uid": 3296813191806492
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 3,
+            "role": "simple_villager",
+            "uid": 3437486612428299
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 2,
+            "role": "werewolf",
+            "uid": 4493081843080714
+        },
+        "event": "roles"
+    },
+    {
+        "content": "side-kill",
+        "event": "end_rule"
+    },
+    {
+        "content": {
+            "round": 1,
+            "status": "night"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "is_werewolf": true,
+            "night": 1,
+            "player": 7
+        },
+        "event": "inquired"
+    },
+    {
+        "content": {
+            "context": [],
+            "decision_kill": {
+                "2": 2,
+                "7": 8,
+                "9": 2
+            },
+            "night": 1
+        },
+        "event": "werewolf_night_discuss"
+    },
+    {
+        "content": {
+            "night": 1,
+            "target_player": 2
+        },
+        "event": "werewolf_kill"
+    },
+    {
+        "content": {
+            "night": 1,
+            "player": null
+        },
+        "event": "healed"
+    },
+    {
+        "content": {
+            "night": 1,
+            "player": null
+        },
+        "event": "poison"
+    },
+    {
+        "content": {
+            "context": "死亡玩家：2号玩家",
+            "round": 1,
+            "status": "day"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "context": "我是7号，我是预言家，昨晚查验8号是狼人。查验8号的心路历程就是在我7号的身边验，如果验出8号是金水可以帮我归票，如果验出8号是查杀可以直接将8号投票出局。昨晚2号死亡，我暂时无法定义2号的身份，他可能是自刀的狼人，也有可能是吃刀的村民。今天好人请跟我一起携手将8号狼人投票出局。我会根据发言和投票，晚上去查验疑似狼人。",
+            "day": "1-1",
+            "player": 7
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                8
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "8": [
+                    "werewolf"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "player": 7,
+            "self_present": [
+                "seer"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "我是猎人，前置位的7号给我发查杀，我认为7号悍跳狼是想给还没发言的预言家发查杀。但我是一个猎人，如果后面没有狼人敢和我对跳猎人，那我就听后面的预言家归票进行投票；如果有人和我对跳猎人，那我就投票对跳猎人的狼人。",
+            "day": "1-1",
+            "player": 8
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "player": 8,
+            "self_present": [
+                "hunter"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "我9号的底牌才是真猎人，本来我觉得7号不像真预言家，但是8号在我真猎人面前悍跳猎人，所以我相信7号是预言家，今天好人跟我一起全票打飞8号玩家。",
+            "day": "1-1",
+            "player": 9
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                8
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "seer"
+                ],
+                "8": [
+                    "werewolf"
+                ]
+            },
+            "player": 9,
+            "self_present": [
+                "hunter"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "我是一张村民牌，我认为7号和9号大概率是两张狼人牌，8号大概率是真猎人。既然8号和9号对跳猎人，那么我们可以先放逐其中一名玩家，然后来定义另一名玩家的身份即可。期待后置位真预言家的查验信息。",
+            "day": "1-1",
+            "player": 1
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                8,
+                9
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "player": 1,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "7号给8号发了查杀，8号起跳了猎人。本来我想的是如果所有人发完言之后还没人和8号对跳猎人，那无疑8号是唯一的猎人，因为2号出局没开枪做不成猎人，所以8号真猎人接到了查杀，那么7号就是悍跳狼，今天投7号出局。但是现在9号也起跳了猎人，那我就从8号和9号当中去分辨真猎人。我认为8号跳猎人的力度还是很大的，因为8号第二个发言，如果8号是狼人，必定知道后面会有真猎人，此时8号贸然悍跳猎人可能会得不偿失，不如悍跳个女巫，这样还能找找真女巫的位置，因此我相信8号大概率是真猎人。9号的发言过于简短，如果9号是真猎人，不可能分析不出7号和8号可能是双狼的格局，8号是不是狼跟7号是不是预言家没什么直接的联系，分辨预言家还是要看真假预言家的独立发言。因此我认为9号不是猎人的视角，8号才是真猎人。那么给8号发查杀的7号是悍跳狼。综上，我本轮会投9号出局。",
+            "day": "1-1",
+            "player": 3
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                9
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "player": 3,
+            "self_present": [
+                "NA"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "没想到可恶的狼人都开始冲锋了！8号和9号都跳猎人，其中肯定有一头狼人，我建议这轮验枪。大家也都明白一个道理，先跳猎人后开枪，本轮我会投9号出局。如果9号开枪，说明7号是预言家，8号是狼人；如果9号没开枪，那就说明7号和9号是狼人在互相做身份。昨夜2号玩家单死，说明女巫双药在手里，我建议女巫不要跳出来。3号认真分析场上局势，具备好人视角，所以我认为3号是好人。",
+            "day": "1-1",
+            "player": 4
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                9
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "simple_villager"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "werewolf",
+                    "seer"
+                ],
+                "8": [
+                    "werewolf",
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf",
+                    "hunter"
+                ]
+            },
+            "player": 4,
+            "self_present": [
+                "NA"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "我是5号玩家，我是一张村民牌。8号玩家和9号玩家对跳猎人，我认为8号玩家是真猎人，因为9号玩家发言过于简短。我分析7号玩家给8号玩家发查杀是因为8号玩家是夹刀位，所以7号玩家和9号玩家是两张狼人。我今天会投票9号玩家。",
+            "day": "1-1",
+            "player": 5
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                9
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "player": 5,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "我是预言家，昨天晚上我查验了7号是查杀。我查验7号的心路历程就是左右置位随便选验的，现在7号跟我对跳预言家，7号给8号发查杀，所以8号在我眼里大概率是好人。我认为8号跳猎人就是真猎人，那么9号在我眼里就是悍跳猎人的狼人。今天我会归票9号，如果9号出局没开枪，那么大家就能知道9号是狼人，8号是真猎人。因为7号给8号猎人发查杀，所以大家也就能知道我是真预言家，7号是悍跳预言家的狼人，那么女巫晚上就可以毒杀7号狼人。",
+            "day": "1-1",
+            "player": 6
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                9
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "player": 6,
+            "self_present": [
+                "seer"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": null,
+        "event": "vote_start"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 8,
+            "reason": "# 此时我应该做的：\n- **投给9号玩家**：由于我是猎人，9号却声称自己是猎人。我判断，如果9号是好人的话，不会和我对跳猎人，这种行为会混淆好人的视野，影响好人的判断。所以9号大概率是狼人在悍跳我的身份，因此我会投票给悍跳我身份的9号玩家。\n综上，我决定投票给9号玩家。",
+            "role_prediction": {
+                "1": [
+                    "simple_villager"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "seer"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 9
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 7,
+            "reason": "作为狼人，我目前已知6号是预言家，7号（我）悍跳预言家给8号发查杀。\n# 此时我应该做的：\n- **投给8号玩家**：通常情况下，作为预言家一定要优先投票给自己查验出的狼人，否则将无法取得好人的信任。为了向好人证实我的“预言家”的身份，骗取好人的信任，我必须投给我的“查杀”8号。\n综上，我决定投票给8号玩家。\n",
+            "role_prediction": {
+                "1": [
+                    "simple_villager"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "simple_villager"
+                ],
+                "4": [
+                    "witch"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "seer"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 8
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 6,
+            "reason": "目前场上出现了猎人对跳的情况，由于猎人可以翻牌自证身份，我们可以通过放逐其中一位来分辨出真假猎人。\n目前场上有8号、9号玩家声称自己是猎人。\n- 8号玩家：因为我6号玩家是预言家，我昨天晚上查验了7号是狼人。今天7号狼人悍跳预言家给8号发查杀，所以我认为8号大概率是好人，那么8号跳猎人就大概率是真猎人。\n- 9号玩家：根据上面我对8号玩家的身份判断，所以我认为9号是悍跳猎人的狼人。\n综上，我认为8号玩家是真猎人。我决定投票给9号玩家。",
+            "role_prediction": {
+                "1": [
+                    "simple_villager"
+                ],
+                "2": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "seer"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 9
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 9,
+            "reason": "# 此时我应该做的：\n- **投给8号玩家**：因为我悍跳猎人的身份，目的就是为了骗取好人的信任，从而保证对狼队局面的领先。所以我会投票8号猎人。\n综上，我决定投票给8号玩家。",
+            "role_prediction": {
+                "1": [
+                    "simple_villager"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "seer"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 8
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 1,
+            "reason": "# 场上对跳猎人时：\n一般而言，第一天是放逐两个预言家或放逐预言家的查杀的回合，但是出现猎人对跳时，第一天就必须在两个对跳的猎人里面放逐。这是因为猎人可以翻牌自证身份，而预言家无法自证身份，因此第一天要优先解决真假猎人的问题，让真假两个预言家再多报一天的验人信息再作定夺。\n目前场上有8号、9号玩家声称自己是猎人。\n- **8号玩家**：接到7号的查杀之后起跳猎人。由于8号是第二个发言的玩家，如果8号是悍跳猎人的狼人，那么后置位的真猎人一定会起跳来攻击8号，这样会导致8号悍跳猎人的行为没有收益，不符合狼人收益最大化的做法。因此我认为8号大概率是真猎人。\n- **9号玩家**：发言过于简短，9号直接站边7号玩家，丝毫不去分析7号和8号可能在进行“狼查杀狼”的战术，我认为9号不具有好人的思考量，反而更像是和7号互做身份的狼人。\n综上，我认为8号玩家是真猎人。我决定投票给9号玩家。",
+            "role_prediction": {
+                "1": [
+                    "simple_villager"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "seer"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 9
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 5,
+            "reason": "目前场上出现了猎人对跳的情况，由于猎人可以翻牌自证身份，我们就可以看出谁是真猎人。本轮可以先不管6号、7号谁是真正的预言家，等到明日各自的验人信息后再作定夺。\n目前场上有8号、9号玩家声称自己是猎人。\n- 8号玩家：接到7号玩家的查杀，8号直接跳猎人。如果8号是悍跳猎人的狼人，后置位的真猎人一定会起跳，那么8号悍跳猎人的行为没有收益，会使狼人阵营处于劣势，因此我认为8号大概率是真猎人。\n- 9号玩家：发言过于简短，没有丝毫猎人的视角，发言不像好人。\n综上，我认为8号玩家是真猎人。我决定投票给9号玩家。",
+            "role_prediction": {
+                "1": [
+                    "simple_villager"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "simple_villager"
+                ],
+                "4": [
+                    "witch"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "seer"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 9
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 4,
+            "reason": "目前场上出现了猎人对跳的情况，由于猎人可以翻牌自证身份，我们可以通过放逐其中一位来分辨出真假猎人。因此，本轮可以先不管6号、7号谁是真正的预言家，等到明日各自的验人信息后再作定夺。\n目前场上有8号、9号玩家声称自己是猎人。\n- 8号玩家：接到7号的查杀之后起跳猎人。我认为8号如果是悍跳猎人的狼人，无疑是找死，因为这样8号还需要他的狼同伴悍跳预言家来救8号，这会使狼人处于劣势，所以我相信8号是猎人。\n- 9号玩家：9号后置位跳猎人，很像在和7号互相做身份。我认为在真假猎人对跳的情况下，要优先放逐后置位起跳猎人的玩家来验枪。\n综上，我认为8号玩家是真猎人。我决定投票给9号玩家。",
+            "role_prediction": {
+                "1": [
+                    "simple_villager"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "simple_villager"
+                ],
+                "4": [
+                    "witch"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "seer"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 9
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 3,
+            "reason": "- **场上局势分析** ：\n本局共有两名玩家对跳预言家：7号发8号查杀，6号发7号查杀。\n本局其他重要信息：8号接到查杀后起跳猎人，9号在8号的后置位也起跳猎人。\n\n- **猎人身份判断** ：\n**8号玩家** ：8号接到查杀直接起跳猎人，不符合狼人的行为，因为后置位的猎人一定会起跳，这样8号就不能达到抗推好人的目的，不如悍跳女巫更有收益，因为8号大概率是真猎人。\n**9号玩家** ：在8号之后起跳猎人，但是不去考虑7号和8号有没有可能是双狼，没有猎人该有的视角，因此9号大概率是狼人。\n\n- 综上，我认为投9号玩家出局是最好的选择。",
+            "role_prediction": {
+                "1": [
+                    "simple_villager"
+                ],
+                "2": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "3": [
+                    "simple_villager"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "seer"
+                ],
+                "7": [
+                    "werewolf"
+                ],
+                "8": [
+                    "hunter"
+                ],
+                "9": [
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 9
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "1": 9,
+            "3": 9,
+            "4": 9,
+            "5": 9,
+            "6": 9,
+            "7": 8,
+            "8": 9,
+            "9": 8
+        },
+        "event": "vote_results"
+    },
+    {
+        "content": {
+            "round": 2,
+            "status": "night"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "is_werewolf": false,
+            "night": 2,
+            "player": 3
+        },
+        "event": "inquired"
+    },
+    {
+        "content": {
+            "context": [],
+            "decision_kill": {
+                "7": 4
+            },
+            "night": 2
+        },
+        "event": "werewolf_night_discuss"
+    },
+    {
+        "content": {
+            "night": 2,
+            "target_player": 4
+        },
+        "event": "werewolf_kill"
+    },
+    {
+        "content": {
+            "night": 2,
+            "player": null
+        },
+        "event": "healed"
+    },
+    {
+        "content": {
+            "night": 2,
+            "player": 7
+        },
+        "event": "poison"
+    },
+    {
+        "content": null,
+        "event": "end",
+        "round": 2,
+        "winner": "villagers"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 狼人起跳预言家，发查杀发到了猎人头上，导致狼人团队功亏一篑。",
+            "player": 1
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 自刀骗取女巫的解药失败，狼队友悍跳预言家被放逐出局。女巫毒杀最后一个狼队友。",
+            "player": 2
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "- 本局好人获胜的关键点：\n好人站边了真预言家，精准找到场上剩余狼人，将其票出局，好人获胜。",
+            "player": 3
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 第一晚狼人自刀，女巫没使用解药，第二晚毒杀一 头狼人，取得胜利。",
+            "player": 4
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 分清了猎人。抗推了狼人。",
+            "player": 5
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 通过发言成功让好人找到我是真预言家，从而第一天把悍跳猎人的狼人公投出局。",
+            "player": 6
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 2号狼队友自刀，女巫没有救，导致狼队局势落后，导致狼队失利。",
+            "player": 7
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 接到悍跳狼人的查杀，把对跳猎人第一天投票出局了。",
+            "player": 8
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 狼队友第一天自刀骗药没有骗到。",
+            "player": 9
+        },
+        "event": "review"
+    }
+]

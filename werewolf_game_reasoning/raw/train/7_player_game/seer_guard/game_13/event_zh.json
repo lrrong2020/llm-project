@@ -1,0 +1,648 @@
+[
+    {
+        "content": {
+            "player": 4,
+            "role": "guard",
+            "uid": 394038425955403
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 7,
+            "role": "simple_villager",
+            "uid": 693110244383851
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 1,
+            "role": "seer",
+            "uid": 1291244569637536
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 3,
+            "role": "werewolf",
+            "uid": 1379205500120192
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 2,
+            "role": "werewolf",
+            "uid": 1484759703236140
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 6,
+            "role": "simple_villager",
+            "uid": 2610669070084841
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 5,
+            "role": "simple_villager",
+            "uid": 2751408675231348
+        },
+        "event": "roles"
+    },
+    {
+        "content": "side-kill",
+        "event": "end_rule"
+    },
+    {
+        "content": {
+            "round": 1,
+            "status": "night"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "night": 1,
+            "player": 4
+        },
+        "event": "guard"
+    },
+    {
+        "content": {
+            "is_werewolf": true,
+            "night": 1,
+            "player": 2
+        },
+        "event": "inquired"
+    },
+    {
+        "content": {
+            "context": [],
+            "decision_kill": {
+                "2": 5,
+                "3": 5
+            },
+            "night": 1
+        },
+        "event": "werewolf_night_discuss"
+    },
+    {
+        "content": {
+            "night": 1,
+            "target_player": 5
+        },
+        "event": "werewolf_kill"
+    },
+    {
+        "content": {
+            "context": "死亡玩家：5号玩家",
+            "round": 1,
+            "status": "day"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "context": "我是守卫，昨晚空守。5号的身份只能是预言家或村民，但是没关系，哪怕5号是预言家，只要我们今天能放逐一只狼人，晚上我直接自守，我们也是有胜利的希望的！我会根据后置位玩家的发言及投票情况选择站边。如果只有一名玩家起跳预言家，我可能不会贸然站边那名玩家。",
+            "day": "1-1",
+            "player": 4
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "5": [
+                    "seer",
+                    "simple_villager"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ]
+            },
+            "player": 4,
+            "self_present": [
+                "guard"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "我是村民，我认为4号在首置位起跳守卫，那么4号可能是真守卫，也有可能是通过起跳守卫来逼真守卫出现的悍跳狼人；5号第一晚出局，由于没有女巫的情况下自刀是没有收益的，因此5号只可能是预言家、守卫或村民。我会在听完所有人发言之后选择站边，并投出自己的一票！",
+            "day": "1-1",
+            "player": 6
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "werewolf",
+                    "guard"
+                ],
+                "5": [
+                    "seer",
+                    "guard",
+                    "simple_villager"
+                ],
+                "7": [
+                    "NA"
+                ]
+            },
+            "player": 6,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "我是村民，我认为4号大概率是守卫，因为在没有疑似预言家起跳的情况下，4号如果是狼人悍跳守卫没有任何收益，只会暴露自己。我认为已出局的5号大概率是被狼人击杀的好人，因为已知场上没有女巫的情况下，狼人没有理由去自刀骗取女巫的解药。6号起跳村民，我认为6号可能是村民或划水的狼人。希望后置位的预言家可以好好发言，带领我们好人团队获胜！",
+            "day": "1-1",
+            "player": 7
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "guard"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "werewolf",
+                    "simple_villager"
+                ]
+            },
+            "player": 7,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "1号是预言家，2号查杀。我的村民们请放心，5号不是预言家，你们的预言家还在场。本轮归票2号。",
+            "day": "1-1",
+            "player": 1
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                2
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ]
+            },
+            "player": 1,
+            "self_present": [
+                "seer"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "2号是村民。如果我是狼人，我会直接跟你1号对跳预言家，不可能起跳村民表水。我认为3号玩家大概率是预言家，我如果贸然地胡乱操作，会影响到预言家及好人的逻辑判断。3号大概率会起跳预言家，但如果3号不起跳，那就说明被刀出局的5号是预言家了，希望好人们能够跟我一起放逐1号悍跳狼人！",
+            "day": "1-1",
+            "player": 2
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                1
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ]
+            },
+            "player": 2,
+            "self_present": [
+                "werewolf"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "我是预言家，4号金水，没想到4号竟然是守卫大人！1号是悍跳狼人，1号往后置位发查杀无非就是想搏杀真预言家，可惜你连二分之一搏杀到预言家的概率都没有赌中！2号可以作为我的反向金水，我认为2号是好人。最后一头狼人只能在6号和7号之中，我今晚会去查验6号的身份，如果查验出6号是好人，7号直接滚动出局！6号如果是狼人，明天全体好人投6号出局，即可获得游戏的胜利。今天全体好人请与我一起携手将1号这只悍跳预言家的狼人放逐出局。守卫今晚记得守护我，保证平安夜。",
+            "day": "1-1",
+            "player": 3
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                1
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "simple_villager"
+                ],
+                "4": [
+                    "guard"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "7": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "player": 3,
+            "self_present": [
+                "seer"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": null,
+        "event": "vote_start"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 2,
+            "reason": "# 此时我应该做的：\n- **投给1号玩家**：因为1号给我发了查杀，如果我选择投票给外置位的任何人，那么都不符合好人接到狼人发的查杀后，会放逐投票给自己发查杀的悍跳狼的“心理预期”。所以我只能选择投票放逐1号。\n综上，我决定投票给1号玩家。",
+            "role_prediction": {
+                "1": [
+                    "seer"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "werewolf"
+                ],
+                "4": [
+                    "guard"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 1,
+            "reason": "作为预言家，我目前已知2号是我的查杀，3号是跟我对跳预言家的悍跳狼。\n# 此时我应该做的：\n- **投给2号玩家**：我是预言家，查验出了2号是狼人，我的职责就是利用自己的查验功能带领好人找出狼人，并将狼人投出局。所以我会投给我的查杀2号。\n综上，我决定投票给2号玩家。",
+            "role_prediction": {
+                "1": [
+                    "seer"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "werewolf"
+                ],
+                "4": [
+                    "guard"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 2
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 6,
+            "reason": "首先，我们需要对场上的真假预言家进行分辨。\n# 预言家身份判断：\n目前场上有1号、3号玩家声称自己是预言家。发言顺序为1号、3号。\n- **1号玩家**：查杀2号。1号的发言非常简短，并没有分析场上的局势，很像是一个怕多说多错的狼人。而且2号并没有和1号对跳预言家，而是跳村民认真表水。如果1号是真预言家，2号是狼人，那么2号势必要和1号对跳预言家来自保。\n- **3号玩家**：给4号金水。3号的发言有理有据、面面俱到，分析了最后一只狼人所在的范围，并且安排了晚上的查验计划，更像是一个负责任的预言家。\n综上，我认为3号玩家是真预言家，基于此，我们进行判断。\n# 基于预言家判断给出其他玩家的身份判定：\n- **1号玩家**：是跟3号对跳的狼人。\n- **4号玩家**：是真守卫。\n# 狼人的可能性排序：\n- 1号＞3号＞4号\n综上，我决定投票给1号玩家。",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf",
+                    "simple_villager"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "guard"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "werewolf",
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 4,
+            "reason": "首先，我们需要对场上的真假预言家进行分辨。\n# 预言家身份判断：\n目前场上有1号、3号玩家声称自己是预言家。发言顺序为1号、3号。\n- **1号玩家**：给2号发查杀。1号的发言过于简短，完全不去分析前置位已发言的三名玩家的身份，也不关心场上的局势。我认为1号的可信度太低，不具有预言家该有的思考量，大概率是悍跳狼。\n- **3号玩家**：给4号（我）发金水。3号的发言明显比1号丰富饱满，分析了每名玩家的身份，大致确认了狼坑。3号认真分析场上局势，具有预言家视角，大概率是真预言家。\n综上，我认为3号玩家是真预言家，基于此，我们进行判断。\n# 基于预言家判断给出其他玩家的身份判定：\n- **1号玩家**：是跟3号对跳的狼人。\n- **2号玩家**：接到1号悍跳狼的查杀，起跳村民，认真表水，我认为2号大概率是好人。\n# 狼人的可能性排序：\n- 1>2>3\n综上，我决定投票给1号玩家。",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "simple_villager"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "guard"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "7": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 7,
+            "reason": "首先，我们需要对场上的真假预言家进行分辨。\n# 预言家身份判断：\n目前场上有1号、3号玩家声称自己是预言家。发言顺序为1号、3号。\n- **1号玩家**：前置位起跳预言家发2号查杀。1号的发言过于简短，我认为1号像是没有准备好如何悍跳的狼人。\n- **3号玩家**：后置位起跳预言家发4号金水。接到1号查杀的2号并没有原地起跳预言家，我认为2号和3号如果为两只狼人，2号大概率会原地起跳而不会选择让3号狼队友起跳预言家从而卖出3号狼队友。因此我认为2号偏像好人，3号偏像真预言家。\n综上，我认为3号玩家是真预言家，基于此，我们进行判断。\n# 基于预言家判断给出其他玩家的身份判定：\n- **1号玩家**：是跟3号对跳预言家的狼人。\n- **6号玩家**：认为4号可能是狼人的观点和我的观点相悖，我认为4号如果是狼人悍跳守卫没有任何收益，因此6号可能为狼人。\n# 狼人的可能性排序：\n- 1＞6\n综上，我决定投票给1号玩家。",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "simple_villager"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "guard"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "werewolf"
+                ],
+                "7": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 3,
+            "reason": "作为狼人，我目前已知1号是预言家，3号（我）悍跳预言家给4号发金水。\n# 此时我应该做的：\n- **投给1号玩家**：我悍跳预言家给4号发金水。为了向好人证实我的“预言家”身份，我必须投票给1号真预言家，尽可能去抗推真预言家，带领狼人阵营取得局面的优势。\n综上，我决定投票给1号玩家。\n",
+            "role_prediction": {
+                "1": [
+                    "seer"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "werewolf"
+                ],
+                "4": [
+                    "guard"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "1": 2,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "6": 1,
+            "7": 1
+        },
+        "event": "vote_results"
+    },
+    {
+        "content": {
+            "round": 2,
+            "status": "night"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "night": 2,
+            "player": 3
+        },
+        "event": "guard"
+    },
+    {
+        "content": {
+            "context": [],
+            "decision_kill": {
+                "2": 4,
+                "3": 4
+            },
+            "night": 2
+        },
+        "event": "werewolf_night_discuss"
+    },
+    {
+        "content": {
+            "night": 2,
+            "target_player": 4
+        },
+        "event": "werewolf_kill"
+    },
+    {
+        "content": null,
+        "event": "end",
+        "round": 2,
+        "winner": "Werewolves"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 好人被狼人迷惑站错边，第一天将预言家公投出局。",
+            "player": 1
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 狼队友悍跳预言家成功抗推真预言家。",
+            "player": 2
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 狼人成功悍跳预言家，将真预言家投票出局，刀守卫成功屠神。",
+            "player": 3
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 好人没有站边1号预言家，导致预言家被抗推出局，狼人晚上杀害守卫，导致好人失败！",
+            "player": 4
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 好人没有分别出真的预言家，把真预言家给投出局了，晚上守卫没有自守，也被狼给杀了！",
+            "player": 6
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 预言家发言过于简短导致好人站边了悍跳狼，预言家被大家抗推出局，狼人顺势落刀无法自守的守卫导致游戏失利。",
+            "player": 7
+        },
+        "event": "review"
+    }
+]

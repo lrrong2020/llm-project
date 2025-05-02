@@ -1,0 +1,783 @@
+[
+    {
+        "content": {
+            "player": 3,
+            "role": "witch",
+            "uid": 693110244383851
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 6,
+            "role": "werewolf",
+            "uid": 1097743185742336
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 5,
+            "role": "simple_villager",
+            "uid": 1291244569637536
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 1,
+            "role": "seer",
+            "uid": 1379205500120192
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 8,
+            "role": "simple_villager",
+            "uid": 1484759703236140
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 7,
+            "role": "hunter",
+            "uid": 2610669070084841
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 4,
+            "role": "werewolf",
+            "uid": 2751408675231348
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 9,
+            "role": "simple_villager",
+            "uid": 3437486612428299
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 2,
+            "role": "werewolf",
+            "uid": 3631005313546004
+        },
+        "event": "roles"
+    },
+    {
+        "content": "side-kill",
+        "event": "end_rule"
+    },
+    {
+        "content": {
+            "round": 1,
+            "status": "night"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "is_werewolf": true,
+            "night": 1,
+            "player": 2
+        },
+        "event": "inquired"
+    },
+    {
+        "content": {
+            "context": [],
+            "decision_kill": {
+                "2": 7,
+                "6": 7
+            },
+            "night": 1
+        },
+        "event": "werewolf_night_discuss"
+    },
+    {
+        "content": {
+            "night": 1,
+            "target_player": 7
+        },
+        "event": "werewolf_kill"
+    },
+    {
+        "content": {
+            "night": 1,
+            "player": null
+        },
+        "event": "healed"
+    },
+    {
+        "content": {
+            "night": 1,
+            "player": 8
+        },
+        "event": "poison"
+    },
+    {
+        "content": {
+            "context": "死亡玩家：7号玩家、8号玩家",
+            "round": 1,
+            "status": "day"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "context": "我认为7号吃刀，8号被毒。我作为神牌出局，好人已经严重落后，如果不开枪带走一个人，没有办法挽救局势，所以我选择带走9号。",
+            "day": "1-0",
+            "player": 7,
+            "reason": "我认为7号吃刀，8号被毒。我作为神牌出局，好人已经严重落后，如果不开枪带走一个人，没有办法追回轮次，所以我选择带走9号。",
+            "role_prediction": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "shoot_player": 9
+        },
+        "event": "shoot"
+    },
+    {
+        "content": {
+            "context": "I am the Seer, and I identified player 2 as a bad identity. I checked player 2 to clarify their identity. My thought process for checking player 2 was to verify someone nearby; if they turned out to be a good identity, it could help me gather votes, and if they were a bad identity, I could directly vote them out. Last night, players 7 and 8 both died, but player 7, who was the Hunter, shot player 9. Player 9's identity is unknown; they could be either a villager or a werewolf. Player 8, who was poisoned, can only be a villager or a werewolf. The Witch still has the antidote; I suggest the Witch keep a low profile. If one of players 8 or 9 was a werewolf and has been eliminated, the villagers still have a chance. However, if both 8 and 9 were villagers, the good team has no chance of winning. I strongly condemn the Witch's decision not to save anyone and instead poison another player. I urge all villagers to vote for player 2 to be eliminated today.",
+            "day": "1-1",
+            "player": 1
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                2
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "9": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "player": 1,
+            "self_present": [
+                "seer"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "Player 1 is a werewolf. I'm the Witch. Last night, Player 7 was attacked, but I didn't save him, and he turned out to be the Hunter. I feel so guilty as a werewolf! You, little werewolf Player 1, dare to declare me as a bad identity? Could it be that Player 9, who was shot by Hunter 7, was a villager? Was Player 8, whom I poisoned last night, also a villager? No wonder you, little werewolf, dare to challenge the great Witch. Oh, my werewolf heart really can't bear it. Player 1, you're so arrogant. I deduce that Players 8 and 9 were both villagers. Now there are three werewolves left. We villagers must unite and never surrender. I'd rather die standing than live on my knees! I will never submit to werewolf Player 1! Even if you form a voting bloc, I won't hesitate to vote Player 1 out without blinking an eye!",
+            "day": "1-1",
+            "player": 2
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                1
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "werewolf"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "simple_villager"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "player": 2,
+            "self_present": [
+                "witch"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I am the Witch. Last night, I saw Player 7 was attacked, but I chose not to use my healing potion. Because I believe in the Werewolf theory of \"three-eight, three-eight, there must be a kill,\" I poisoned Player 8 instead. Unexpectedly, Player 7 turned out to be the Hunter, resulting in the tragic death of three players. I admit that as the Witch, not saving Player 7 the Hunter was my negligence! Player 2, the werewolf, is too arrogant this round. Not only did they pretend to be the Witch, but they also directly expressed their werewolf intentions, which is truly outrageous. Such brazen words admitting to being a werewolf! Isn't this clearly telling me that Players 8 and 9 were good people who were eliminated, and that the werewolves have already formed a voting bloc? Even if you werewolves have formed a voting bloc, I, as a good person, will never surrender! This round, I urge all good people to join me, the Witch, in voting for Player 2, the werewolf!",
+            "day": "1-1",
+            "player": 3
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                2
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "simple_villager"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "player": 3,
+            "self_present": [
+                "witch"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I am the Hunter. I verified that No. 6 is a good identity. Yesterday, I didn't use the antidote to save No. 8, but I used the poison to kill No. 7. I don't know why No. 7 was able to shoot; maybe I was hallucinating or there was a system bug. I didn't go out last night. I often keep company with my fellow villagers, as I am also a villager. Today, during the day, I'm voting for No. 6. No. 6, who is in the last speaking position, please help the werewolves by calling for votes, to make the voting pattern consistent.",
+            "day": "1-1",
+            "player": 4
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                6
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "player": 4,
+            "self_present": [
+                "seer",
+                "simple_villager",
+                "witch",
+                "hunter"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "Player 5 is a villager. Either Player 2 or 3 is the Witch, while the other is a werewolf pretending to be the Witch. The Witch poisoned Player 8. Player 7, the Hunter, shot Player 9. Player 6 hasn't spoken yet. Either Player 1 or 6 is the Seer. If Player 1 is the Seer, then Player 2 is a werewolf, Player 3 is the Witch, and Player 4's speech suggests multiple identities. Player 4's speech is surprisingly brazen! I believe Player 4 is a werewolf. In this case, it's highly likely that Players 8 and 9 were indeed good players who were eliminated, which means Player 6 must be a werewolf. However, if Player 1 is a werewolf, Player 2 is the Witch, Player 3 is a werewolf pretending to be the Witch, and Player 6 is the real Seer, then Player 4 must also be a werewolf. With three werewolves present, the werewolf team can control the votes. This round, I will vote for Player 4 as a werewolf.",
+            "day": "1-1",
+            "player": 5
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                4
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "seer",
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf",
+                    "witch"
+                ],
+                "3": [
+                    "witch",
+                    "werewolf"
+                ],
+                "4": [
+                    "werewolf"
+                ],
+                "6": [
+                    "werewolf",
+                    "seer"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "simple_villager"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "player": 5,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "Thirty years east of the river, thirty years west of the river. Don't underestimate the werewolves when we're down. Why should we explain anything to the good guys? What's there to explain? I'm laying all my cards on the table! We have three werewolves present - numbers 2, 4, and 6. We've formed a voting bloc, and now you good guys need to dance to our tune, got it? What's there to discuss with you good guys? Nothing at all. It's no longer the time when you good guys had strength in numbers. The situation has changed, the tables have turned, and we werewolves are now singing our victory song. I'll give you good guys two choices. First: vote with us to eliminate villager number 5, ending things quickly for you and sparing yourselves some suffering. Second: split the vote with us for a tiebreaker, and we'll kill one of you during the night.",
+            "day": "1-1",
+            "player": 6
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                5
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "NA"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "player": 6,
+            "self_present": [
+                "werewolf"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": null,
+        "event": "vote_start"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 2,
+            "reason": "# What we should do in the current situation:\n\nSince there are 3 werewolves among the 6 surviving players, our werewolf team only needs to eliminate one good player to secure a majority vote and win. As my fellow werewolf, Player 6, has called for a vote against Player 5 from the last speaking position, we werewolves should unite and all vote for Player 5 today.",
+            "role_prediction": {
+                "1": [
+                    "seer"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "witch"
+                ],
+                "4": [
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "werewolf"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "simple_villager"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 5
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 6,
+            "reason": "# What should be done in the current situation:\n- Since there are 3 werewolves among the 6 surviving players, our werewolf team only needs to eliminate one good player to secure a majority vote and win. As I have called for votes against Player 5 in my speech, we werewolves should unite and all vote to eliminate Player 5 today.",
+            "role_prediction": {
+                "1": [
+                    "seer"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "witch"
+                ],
+                "4": [
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "werewolf"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "simple_villager"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 5
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 5,
+            "reason": "Given that the werewolf team has revealed their identities, and the werewolves are players 2, 4, and 6.\n# What I should do now:\n- As a good player, I must stay true to my role and never surrender to the werewolves. Based on the speeches, I will vote for player 6, because when there are players who have been identified as werewolves, the good team will prioritize voting for those identified werewolves.\nIn conclusion, I choose to vote for player 6.",
+            "role_prediction": {
+                "1": [
+                    "seer"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "witch"
+                ],
+                "4": [
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "werewolf"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "simple_villager"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 6
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 1,
+            "reason": "As the Seer, I currently know that Player 2 is my bad identity.\n# What I should do now:\n- **Vote for Player 2**: I am the Seer, and I have verified that Player 2 is a werewolf. My duty is to use my verification ability to lead the good team in finding werewolves and eliminating them from the game. Therefore, I will vote for my bad identity, Player 2.\nIn conclusion, I decide to vote for Player 2.",
+            "role_prediction": {
+                "1": [
+                    "seer"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "witch"
+                ],
+                "4": [
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "werewolf"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "simple_villager"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 2
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 3,
+            "reason": "# What I should do now:\n- **Vote for Player 2**: As I am the Witch, yet Player 2 claims to be the Witch. I judge that if Player 2 were a good person, they wouldn't rashly pretend to be the Witch, as such behavior would confuse the good team's perspective and affect their judgment. Moreover, Player 6 in the last position has already admitted to being a werewolf, and Player 6 indicated that their werewolf teammates are Players 2 and 4. Therefore, Player 2 must be a werewolf pretending to be me. Hence, I will vote for Player 2 who is falsely claiming my identity.\nIn conclusion, I decide to vote for Player 2.",
+            "role_prediction": {
+                "1": [
+                    "seer"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "witch"
+                ],
+                "4": [
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "werewolf"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "simple_villager"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 2
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 4,
+            "reason": "# What we should do in the current situation:\n\nSince there are 3 werewolves among the 6 surviving players, our werewolf team only needs to eliminate one good player to secure a majority vote and win. Today, our werewolf teammate in the last speaking position, number 6, called for a vote against player 5. Therefore, our werewolf team should unite and all vote for player 5 today.",
+            "role_prediction": {
+                "1": [
+                    "seer"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "witch"
+                ],
+                "4": [
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager"
+                ],
+                "6": [
+                    "werewolf"
+                ],
+                "7": [
+                    "hunter"
+                ],
+                "8": [
+                    "simple_villager"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 5
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "1": 2,
+            "2": 5,
+            "3": 2,
+            "4": 5,
+            "5": 6,
+            "6": 5
+        },
+        "event": "vote_results"
+    },
+    {
+        "content": null,
+        "event": "end",
+        "round": 1,
+        "winner": "Werewolves"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 狼人刀猎人，女巫没有救，女巫毒杀1位村民，猎人带走1位村民，导致狼人绑票，好人失败。",
+            "player": 1
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 第一天白天好人3张出局。\n\n",
+            "player": 2
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 女巫首夜没有选择救人反而毒人，导致猎人和村民出局，猎人开枪带走村民导致狼队第一天绑票获胜。",
+            "player": 3
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 杀了猎人，猎人带走了好人。\n- 女巫盲毒毒错了好人，致使狼队天胡开局，直接锁定胜局。",
+            "player": 4
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 第一天猎人被刀，女巫没救，毒杀了村民。\n- 第二天猎人开枪带走了第二个村民。\n- 三狼在场，狼队绑票。",
+            "player": 5
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 第一晚狼人刀中猎人，女巫没救，导致一天三个好人出局，狼人掌控局势，取得胜利。\n",
+            "player": 6
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 猎人第一天被刀 狼人齐心协力冲票村民。",
+            "player": 7
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 女巫没有救人，反而毒杀了村民。",
+            "player": 8
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "# 本局狼人获胜的关键点：\n- 猎人第一天被杀，带走了好人，导致好人数量上处于劣势，狼人不战而胜。",
+            "player": 9
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "player_ids": [
+                4
+            ],
+            "uids": [
+                2751408675231348
+            ]
+        },
+        "event": "bad_player"
+    }
+]

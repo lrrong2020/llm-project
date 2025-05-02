@@ -1,0 +1,1632 @@
+[
+    {
+        "content": {
+            "player": 2,
+            "role": "werewolf",
+            "uid": 693110244383851
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 3,
+            "role": "seer",
+            "uid": 763538402720170
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 1,
+            "role": "werewolf",
+            "uid": 1097743185742336
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 9,
+            "role": "simple_villager",
+            "uid": 1819069565122313
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 5,
+            "role": "werewolf",
+            "uid": 1959807053997755
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 8,
+            "role": "witch",
+            "uid": 2610669070084841
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 6,
+            "role": "simple_villager",
+            "uid": 2681086683147540
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 7,
+            "role": "guard",
+            "uid": 3296813191806492
+        },
+        "event": "roles"
+    },
+    {
+        "content": {
+            "player": 4,
+            "role": "simple_villager",
+            "uid": 4493081843080714
+        },
+        "event": "roles"
+    },
+    {
+        "content": "side-kill",
+        "event": "end_rule"
+    },
+    {
+        "content": {
+            "round": 1,
+            "status": "night"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "is_werewolf": true,
+            "night": 1,
+            "player": 2
+        },
+        "event": "inquired"
+    },
+    {
+        "content": {
+            "night": 1,
+            "player": 4
+        },
+        "event": "guard"
+    },
+    {
+        "content": {
+            "context": [],
+            "decision_kill": {
+                "1": 5,
+                "2": 5,
+                "5": 5
+            },
+            "night": 1
+        },
+        "event": "werewolf_night_discuss"
+    },
+    {
+        "content": {
+            "night": 1,
+            "target_player": 5
+        },
+        "event": "werewolf_kill"
+    },
+    {
+        "content": {
+            "night": 1,
+            "player": null
+        },
+        "event": "healed"
+    },
+    {
+        "content": {
+            "night": 1,
+            "player": null
+        },
+        "event": "poison"
+    },
+    {
+        "content": {
+            "context": "死亡玩家：5号玩家",
+            "round": 1,
+            "status": "day"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "context": "I'm a villager, so I don't have much information from the night. I'll first listen to the seer's statement from the later positions, then decide my vote based on the seer's verification. I don't know the identity of player 5 who was eliminated last night. The witch probably feared that player 5 was a werewolf killing themselves, so she didn't use the healing potion. However, I think the witch should have used the potion last night. If the eliminated player 5 was the guard or the seer, the good team would be in a very difficult situation.",
+            "day": "1-1",
+            "player": 9
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ],
+                "8": [
+                    "NA"
+                ]
+            },
+            "player": 9,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I am a villager with no special abilities. My sole objective in this game is to identify the werewolves and protect the village. Player 5 was eliminated during the night, and their identity remains unclear - they could have been a good player targeted by werewolves or a werewolf who sacrificed themselves. Player 9's speech was vague, making their identity uncertain - they could be a werewolf trying to lay low or genuinely a villager with no night actions. I will base my valuable vote on the statements of the seer who will speak after me.",
+            "day": "1-1",
+            "player": 1
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "1-1",
+            "identity_label": {
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "werewolf",
+                    "simple_villager"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "werewolf",
+                    "simple_villager"
+                ]
+            },
+            "player": 1,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I am a villager without night actions. The players in the earlier speaking positions, number 9 and number 1, have both claimed to be villagers. Since my own identity card is a villager, I don't believe that three consecutive speakers are all villagers. Therefore, I think there's a high probability that either number 9 or number 1 is a werewolf pretending to be a villager. I believe number 9's comment about the witch using the healing potion seems more like a good person's mindset, so I think number 1 is more likely to be a werewolf than number 9. I hope the real Seer in the later speaking positions can provide a more comprehensive speech, so that I can easily side with the true Seer.",
+            "day": "1-1",
+            "player": 2
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "werewolf",
+                    "simple_villager"
+                ],
+                "3": [
+                    "NA"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "player": 2,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "Player 3 is the Seer. Last night, I verified that Player 2 is a werewolf. The process of checking Player 2 was to verify someone next to me, and since I'm Player 3, I checked Player 2 who is adjacent to me. I urge all the villagers to follow my lead and vote to eliminate Player 2! As a Seer who can't tolerate any injustice, I won't allow werewolves to harm innocent villagers in our village. Player 2 claimed that Player 9 is good, but I believe Player 9 is just a villager that Player 2 is trying to vouch for from a werewolf's perspective. In Player 9's speech, they suggested that the Witch should use the healing potion, but Player 1 criticized Player 9's speech as being vague. Therefore, Player 1's perspective seems incorrect. Tonight, I will verify Player 1. Today, I ask all villagers to trust that I am the true Seer and unanimously vote to eliminate Player 2.",
+            "day": "1-1",
+            "player": 3
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                2
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "werewolf",
+                    "simple_villager"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "player": 3,
+            "self_present": [
+                "seer"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "My identity card is Villager. The players in the front positions, No. 9, No. 1, and No. 2, all claimed to be Villagers. Given that I'm certain of my Villager identity, there must be at least one Werewolf among you three. On the first night, the Witch didn't use her potion. I suggest that the Witch and the Guard don't reveal their identities. The Guard should protect the Seer on the first night, the Witch should save the Seer on the second night, and the Guard should protect the Seer again on the third night. This way, the Seer can have four nights of verification. Don't use your abilities on the Seer simultaneously, or it might result in a situation where both the Guard and the Witch protect the Seer, causing the Seer to be eliminated. So far, I've only heard No. 3 claim to be the Seer. I'm not taking sides for now; I'll listen to the speeches from the players in the later positions before deciding whom to support.",
+            "day": "1-1",
+            "player": 4
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "2": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "3": [
+                    "seer",
+                    "werewolf"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "werewolf",
+                    "simple_villager"
+                ]
+            },
+            "player": 4,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I'm a villager. Among the players who spoke before me, only No. 3 claimed to be the Seer, so I'm temporarily siding with No. 3. I think No. 2 is very aggressive. No. 2 judged that No. 1 is more likely to be a werewolf than No. 9 based on just a few words from them. I feel that No. 2's speech sounds like that of a werewolf. Among the players who spoke before me, No. 9, No. 1, and No. 4 also claimed to be villagers. I believe at least one of these three is a werewolf. Today, I will vote to eliminate No. 2.",
+            "day": "1-1",
+            "player": 6
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                2
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "player": 6,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I am the Guard. Last night, I protected Player 4. Therefore, it's certain that Player 5's death wasn't caused by a simultaneous protection and rescue. This can only mean that the Witch didn't use the healing potion last night. None of the players who spoke before me claimed to be the Witch, and only Player 8 hasn't spoken yet, so Player 8 is likely to be the Witch. If Player 8 is indeed the Witch, then Player 3 is currently the uncontested Seer, which means Player 3 is probably the real Seer. If Player 8 is the Witch, I will protect the Witch tonight. If Player 3 dies, the Witch should use the healing potion to save Player 3. Tomorrow night, I'll protect Player 3, the Seer, allowing them to check at least two more players' identities. I think Player 4 seems like a genuine Villager because they were giving sincere advice to the Witch and Guard, so Player 4 should be on the good side. For now, I support Player 3. Player 3's bad identity is Player 2, so we should vote for Player 2 today. I'll wait to hear Player 8's speech before making a final decision.",
+            "day": "1-1",
+            "player": 7
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                2
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "player": 7,
+            "self_present": [
+                "guard"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I am your esteemed Witch. Last night, I agonized over my decision for a long time, but ultimately chose not to save No. 5. If the Witch always chooses to save someone on the first night, the werewolves will exploit this weakness. They might kill one of their own to trick the Witch into using her potion and then pretend to be the Seer after dawn. So, I didn't save No. 5 last night. Given the current situation, I believe No. 5 was likely a werewolf who sacrificed themselves, while the remaining werewolves chose not to claim any special roles in order to survive. As I'm the last to speak, and No. 3 is the only Seer on the field, I choose to support No. 3. If No. 3 is targeted tonight, I will use my potion to save them. I believe No. 7 is the Guard; they should protect me tonight. Today, all the good people should vote to eliminate No. 2, who was identified as having a bad identity.",
+            "day": "1-1",
+            "player": 8
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                2
+            ],
+            "day": "1-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "werewolf"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "player": 8,
+            "self_present": [
+                "witch"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": null,
+        "event": "vote_start"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 8,
+            "reason": "# Analysis of the current situation:\nCurrently, only Player 3 has claimed to be the Seer, identifying Player 2 as a werewolf. Since no one else has counter-claimed as the Seer, Player 3 is likely the real Seer.\n\n# What I should do now:\n- **Vote for Player 2**: As a good player, I need to follow the Seer's lead and vote out the werewolf. Therefore, this round I will vote for Player 2, who was identified as a bad identity by Player 3, the Seer.\n\nIn conclusion, I decide to vote for Player 2.",
+            "role_prediction": {
+                "1": [
+                    "werewolf",
+                    "simple_villager"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "werewolf",
+                    "simple_villager"
+                ],
+                "5": [
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 2
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 6,
+            "reason": "# Analysis of the current situation:\nCurrently, only Player 3 has claimed to be the Seer, identifying Player 2 as a werewolf. Since no one else has counter-claimed the Seer role, Player 3 is likely the real Seer.\n\n# What I should do now:\n- **Vote for Player 2**: As a villager, I need to follow the Seer's lead and eliminate the werewolf. Therefore, I will vote for Player 2, who was identified as a bad identity by Player 3, the Seer.\n\nIn conclusion, I have decided to vote for Player 2.",
+            "role_prediction": {
+                "1": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 2
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 9,
+            "reason": "# Analysis of the current situation:\nCurrently, only Player 3 has claimed to be the Seer, identifying Player 2 as a werewolf. Since no one else has counter-claimed as the Seer, Player 3 is likely the real Seer.\n\n# What I should do now:\n- **Vote for Player 2**: As a villager, I need to follow the Seer's lead and vote out the werewolf. Therefore, this round I will vote for Player 2, who was identified as a bad identity by Player 3, the Seer.\n\nIn conclusion, I have decided to vote for Player 2.",
+            "role_prediction": {
+                "1": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 2
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 1,
+            "reason": "As a werewolf, I know that Player 3 has claimed to be the seer and identified Player 2 as a bad identity. Since none of us werewolves have pretended to be the seer, this is a passive werewolf game.\n\nWhat I should do now:\n- **Vote for Player 2**: Player 3 is the only seer in the game and has identified my werewolf teammate, Player 2, as a bad identity. To avoid revealing my werewolf identity too early, I have no choice but to sacrifice my werewolf teammate. I will follow the good players in voting out Player 2. During the night, I will seize the opportunity to eliminate a good player. Therefore, I decide to vote for my werewolf teammate, Player 2.\n\nIn conclusion, I decide to vote for Player 2.",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager"
+                ],
+                "5": [
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 2
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 2,
+            "reason": "As a werewolf, I now know that player 3 is the Seer.\nWhat I should do now:\n- **Vote for player 3**: Since player 3, the Seer, has identified me as a werewolf, if I choose to vote for any other player in a later position, it wouldn't meet the \"psychological expectation\" of a good player who, after receiving a werewolf identification, would prioritize voting out the werewolf who pretends to be a seer and gave them the bad identity. Therefore, I must prioritize voting out player 3 this round.\nIn conclusion, I decide to vote for player 3.",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager"
+                ],
+                "5": [
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 3
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 3,
+            "reason": "As the Seer, I currently know that Player 2 is my bad identity.\nWhat I should do now:\n- **Vote for Player 2**: I am the Seer, and I have verified that Player 2 is a werewolf. My duty is to use my verification ability to lead the good team in finding and eliminating werewolves. As the Seer, I must prioritize eliminating the werewolf I have identified. Therefore, I have decided to vote for Player 2, the werewolf.\nIn conclusion, I have decided to vote for Player 2.",
+            "role_prediction": {
+                "1": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 2
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 7,
+            "reason": "# Analysis of the current situation:\nCurrently, only player 3 has claimed to be the Seer, identifying player 2 as a werewolf. Since no one else has counter-claimed as the Seer, player 3 is likely the real Seer.\n\n# What I should do now:\n- **Vote for player 2**: As a villager, I need to follow the Seer's lead and eliminate the werewolf. Therefore, I will vote for player 2, who was identified as a bad identity by player 3, the Seer.\n\nIn conclusion, I have decided to vote for player 2.",
+            "role_prediction": {
+                "1": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager"
+                ],
+                "5": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 2
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "1-1",
+            "player": 4,
+            "reason": "# Analysis of the current situation:\nCurrently, only Player 3 has claimed to be the Seer, identifying Player 2 as a werewolf. Since no one else has counter-claimed the Seer role, Player 3 is likely the real Seer.\n\n# What I should do now:\n- **Vote for Player 2**: As a villager, I need to follow the Seer's lead and eliminate the werewolf. Therefore, I will vote for Player 2, who was identified as a bad identity by Player 3, the Seer.\n\nIn conclusion, I have decided to vote for Player 2.",
+            "role_prediction": {
+                "1": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager"
+                ],
+                "5": [
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 2
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "1": 2,
+            "2": 3,
+            "3": 2,
+            "4": 2,
+            "6": 2,
+            "7": 2,
+            "8": 2,
+            "9": 2
+        },
+        "event": "vote_results"
+    },
+    {
+        "content": {
+            "round": 2,
+            "status": "night"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "night": 2,
+            "player": 8
+        },
+        "event": "guard"
+    },
+    {
+        "content": {
+            "is_werewolf": true,
+            "night": 2,
+            "player": 1
+        },
+        "event": "inquired"
+    },
+    {
+        "content": {
+            "context": [],
+            "decision_kill": {
+                "1": 3
+            },
+            "night": 2
+        },
+        "event": "werewolf_night_discuss"
+    },
+    {
+        "content": {
+            "night": 2,
+            "target_player": 3
+        },
+        "event": "werewolf_kill"
+    },
+    {
+        "content": {
+            "night": 2,
+            "player": 3
+        },
+        "event": "healed"
+    },
+    {
+        "content": {
+            "night": 2,
+            "player": null
+        },
+        "event": "poison"
+    },
+    {
+        "content": {
+            "context": "今天是平安夜",
+            "round": 2,
+            "status": "day"
+        },
+        "event": "cycle_round"
+    },
+    {
+        "content": {
+            "context": "I am the Witch. Last night, Player 3 was killed, and I chose to use my healing potion to save Player 3 because I believe that Player 5, who was eliminated in the first round, was a self-killing werewolf, and Player 3 is the uncontested Seer. Today, I will listen to Player 3's verification report and vote based on their information.",
+            "day": "2-1",
+            "player": 8
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "2-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "werewolf"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "player": 8,
+            "self_present": [
+                "witch"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I am a villager. I believe the situation on the table is already quite clear. Number 3 is the real Seer, and the werewolves don't dare to pretend to be a special role. Therefore, I think Number 5 is most likely a werewolf who killed themselves to deceive the Witch. This round, I will listen to the Seer's investigation and vote according to the Seer's recommendation.",
+            "day": "2-1",
+            "player": 9
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "2-1",
+            "identity_label": {
+                "1": [
+                    "NA"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "werewolf"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ],
+                "8": [
+                    "NA"
+                ]
+            },
+            "player": 9,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "As a villager, I don't have any special abilities, but I have a heart that's dedicated to helping the village win. I will carefully listen to every player's speech and analyze each clue thoroughly. I won't blindly follow others' opinions, nor will I be easily misled by werewolves. I still believe that Player 3 is the Seer, and this round I will vote along with Player 3's decision.",
+            "day": "2-1",
+            "player": 1
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [],
+            "day": "2-1",
+            "identity_label": {
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "NA"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "player": 1,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I am the Seer. Last night, I checked Player 1, and Player 1 is a werewolf. Today, we should all vote to eliminate Player 1. Yesterday, Player 7 claimed to be the Guard, and I believe Player 7 is indeed the Guard. Tonight, I will check Player 4 because Player 4 didn't take a side in yesterday's speech. I think Player 4 might be a Villager without any information, or a werewolf who doesn't want to reveal their perspective.",
+            "day": "2-1",
+            "player": 3
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                1
+            ],
+            "day": "2-1",
+            "identity_label": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "4": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "player": 3,
+            "self_present": [
+                "seer"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I'm a villager, and I believe the werewolf suspects are No. 1 and No. 2. Speaking to Seer No. 3, I can't possibly be a werewolf. Firstly, both No. 1 and No. 2 are werewolves you've identified. If I were a werewolf, our team would definitely have pretended to be the seer and declared you, No. 3, as a bad identity. So, I must be on the good side. The last werewolf could be among No. 5, No. 6, or No. 9. Today, let's vote to eliminate No. 1. If the game ends, then No. 5 is the last werewolf; if not, the last werewolf is either No. 6 or No. 9. Last night, Guard No. 7 most likely protected Witch No. 8. Tonight, the guard should protect Seer No. 3, ensuring the seer won't be eliminated tomorrow. I suggest the seer verify my identity tonight, and Witch No. 8 should choose to poison either No. 9 or No. 6. If the game doesn't end, we'll lynch the other one tomorrow, guaranteeing our victory. We're in a leading position against the werewolves. I'll be voting for No. 1 today.",
+            "day": "2-1",
+            "player": 4
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                1
+            ],
+            "day": "2-1",
+            "identity_label": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "5": [
+                    "werewolf",
+                    "simple_villager"
+                ],
+                "6": [
+                    "werewolf",
+                    "simple_villager"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "player": 4,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I'm a villager. Currently, only No. 3 has claimed to be the seer. I support No. 3. Today, let's vote for No. 1, who was identified as a bad identity by No. 3. If the game doesn't end, the remaining werewolf might be either No. 9 or No. 4. Tonight, No. 7 as the guard can protect No. 3, the seer. This way, the good team can still have information from a player's verification tomorrow. I believe the good team has a high chance of winning this game.",
+            "day": "2-1",
+            "player": 6
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                1
+            ],
+            "day": "2-1",
+            "identity_label": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "NA"
+                ],
+                "9": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "player": 6,
+            "self_present": [
+                "simple_villager"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": {
+            "context": "I'm the Guard. Last night, I protected Number 8. It was a peaceful night, and no one claimed to be the Witch against Number 8, so Number 8 must be the real Witch. I still believe Number 3 is the real Seer. Today, I will follow Number 3's lead to vote out Number 1 as a werewolf. If Number 1 is eliminated and the game doesn't end, I will protect Number 3, the Seer, tonight. This way, Number 3 can continue to report their verification results tomorrow, and the good team will surely win.",
+            "day": "2-1",
+            "player": 7
+        },
+        "event": "speech"
+    },
+    {
+        "content": {
+            "call_for_vote": [
+                1
+            ],
+            "day": "2-1",
+            "identity_label": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "NA"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "NA"
+                ],
+                "5": [
+                    "NA"
+                ],
+                "6": [
+                    "NA"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "NA"
+                ]
+            },
+            "player": 7,
+            "self_present": [
+                "guard"
+            ]
+        },
+        "event": "speech_summary"
+    },
+    {
+        "content": null,
+        "event": "vote_start"
+    },
+    {
+        "content": {
+            "day": "2-1",
+            "player": 8,
+            "reason": "# Analysis of the current situation:\nCurrently, only Player 3 has claimed to be the Seer, identifying Player 1 as a werewolf. Since no one else has counter-claimed the Seer role, Player 3 is likely the real Seer.\n\n# What I should do now:\n- **Vote for Player 1**: As a villager, I need to follow the Seer's lead and eliminate the werewolf. Therefore, this round I will vote for Player 1, who was identified as a bad identity by Player 3, the Seer.\n\nIn conclusion, I have decided to vote for Player 1.",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager"
+                ],
+                "5": [
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "2-1",
+            "player": 3,
+            "reason": "As the Seer, I currently know that Player 1 is my bad identity, and no werewolf is pretending to be a seer against me.\n# What I should do now:\n- **Vote for Player 1**: I am the Seer, and I have verified that Player 1 is a werewolf. My responsibility is to use my verification ability to lead the good team in finding and eliminating werewolves. As the Seer, I must prioritize eliminating the werewolf I have identified. Therefore, I have decided to vote for Player 1, the werewolf.\nIn conclusion, I have decided to vote for Player 1.",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "2-1",
+            "player": 1,
+            "reason": "As a werewolf, I now know that Player 3 is the Seer.\nWhat I should do now:\n- **Vote for Player 3**: Since Player 3, the Seer, has identified me as a bad identity, if I choose to vote for any other player, it wouldn't meet the \"psychological expectation\" of a good player who, after receiving a bad identity from a werewolf, would prioritize voting out the werewolf pretending to be a seer. Therefore, I must prioritize voting out Player 3 this round.\nIn conclusion, I decide to vote for Player 3.",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager"
+                ],
+                "5": [
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 3
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "2-1",
+            "player": 9,
+            "reason": "# Analysis of the current situation:\nCurrently, only Player 3 has claimed to be the Seer, identifying Player 1 as a werewolf. Since no one else has counter-claimed the Seer role, Player 3 is likely the real Seer.\n\n# What I should do now:\n- **Vote for Player 1**: As a good player, I need to follow the Seer's lead and eliminate the werewolf. Therefore, I will vote for Player 1, who was identified as a bad identity by Player 3, the Seer.\n\nIn conclusion, I have decided to vote for Player 1.",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "2-1",
+            "player": 7,
+            "reason": "# Analysis of the current situation:\nCurrently, only Player 3 has claimed to be the Seer, identifying Player 1 as a werewolf. Since no one else has counter-claimed the Seer role, Player 3 is likely the real Seer.\n\n# What I should do now:\n- **Vote for Player 1**: As a villager, I need to follow the Seer's lead and vote out the werewolf. Therefore, this round I will vote for Player 1, who was identified as a bad identity by Player 3, the Seer.\n\nIn conclusion, I have decided to vote for Player 1.",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager"
+                ],
+                "5": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "2-1",
+            "player": 6,
+            "reason": "# Analysis of the current situation:\nCurrently, only Player 3 has claimed to be the Seer, identifying Player 1 as a werewolf. Since no one else has counter-claimed the Seer role, Player 3 is likely the real Seer.\n\n# What I should do now:\n- **Vote for Player 1**: As a good player, I need to follow the Seer's lead and eliminate the werewolf. Therefore, this round I will vote for Player 1, who was identified as a bad identity by Player 3, the Seer.\n\nIn conclusion, I have decided to vote for Player 1.",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "5": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "6": [
+                    "simple_villager"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "day": "2-1",
+            "player": 4,
+            "reason": "# Analysis of the current situation:\nCurrently, only Player 3 has claimed to be the Seer, identifying Player 1 as a werewolf. Since no one else has counter-claimed as the Seer, Player 3 is likely the real Seer.\n\n# What I should do now:\n- **Vote for Player 1**: As a good player, I need to follow the Seer's lead and vote out the werewolf. Therefore, this round I will vote for Player 1, who was identified as a bad identity by Player 3, the Seer.\n\nIn conclusion, I decide to vote for Player 1.",
+            "role_prediction": {
+                "1": [
+                    "werewolf"
+                ],
+                "2": [
+                    "werewolf"
+                ],
+                "3": [
+                    "seer"
+                ],
+                "4": [
+                    "simple_villager"
+                ],
+                "5": [
+                    "werewolf",
+                    "simple_villager"
+                ],
+                "6": [
+                    "simple_villager",
+                    "werewolf"
+                ],
+                "7": [
+                    "guard"
+                ],
+                "8": [
+                    "witch"
+                ],
+                "9": [
+                    "simple_villager",
+                    "werewolf"
+                ]
+            },
+            "voted_to_player": 1
+        },
+        "event": "voted"
+    },
+    {
+        "content": {
+            "1": 3,
+            "3": 1,
+            "4": 1,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1
+        },
+        "event": "vote_results"
+    },
+    {
+        "content": null,
+        "event": "end",
+        "round": 2,
+        "winner": "villagers"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 狼队没有选择悍跳，导致预言家连续两晚查验狼人，成功放逐所有狼人。\n",
+            "player": 1
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 由于本局狼人没有起跳预言家导致形成怂狼局，狼人被真预言家查杀依次被好人放逐出局导致失败。",
+            "player": 2
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 女巫没有救自刀狼人，狼人选择怂狼局，我第一天查验一张狼人，第二天又查验出一张狼人。",
+            "player": 3
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n-狼人首夜自刀骗药的小伎俩被女巫看透，预言家查验两天都是狼人。",
+            "player": 4
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局导致失败的原因**：\n- 自刀骗取女巫解药，女巫没有救人。",
+            "player": 5
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 跟随预言家的查验投票放逐了两个狼人。",
+            "player": 6
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 女巫第一天没有让狼人自刀骗取解药的计谋得逞，导致狼人不敢悍跳预言家，单边预言家成功查验到狼人，好人局势十分领先。",
+            "player": 7
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 女巫没有救自刀的狼人，预言家查验出另外两个狼人。",
+            "player": 8
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "context": "**本局做得比较好的地方**：\n- 狼人自刀骗药失败，导致狼人怂狼局。",
+            "player": 9
+        },
+        "event": "review"
+    },
+    {
+        "content": {
+            "player_ids": [
+                8,
+                8,
+                8
+            ],
+            "uids": [
+                2610669070084841,
+                2610669070084841,
+                2610669070084841
+            ]
+        },
+        "event": "bad_player"
+    }
+]
