@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/src/evaluate.py", line 232, in <module>
+    main() 
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/src/evaluate.py", line 222, in main
+    evaluator = GomokuEvaluator(
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/src/evaluate.py", line 66, in __init__
+    "exact_match": evaluate.load("exact_match"),
+AttributeError: module 'evaluate' has no attribute 'load'
+
+==================================================
+  Evaluating the model
+==================================================
+Running: python src/evaluate.py --model_path models/gomoku-gpt2_final --data_dir data/processed/gomoku_dataset --output_dir evaluation_results
+Traceback (most recent call last):
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/run_pipeline.py", line 85, in <module>
+    main() 
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/run_pipeline.py", line 71, in main
+    run_command(
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/run_pipeline.py", line 19, in run_command
+    result = subprocess.run(command, shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'python src/evaluate.py --model_path models/gomoku-gpt2_final --data_dir data/processed/gomoku_dataset --output_dir evaluation_results' returned non-zero exit status 1.

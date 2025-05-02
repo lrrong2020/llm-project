@@ -13,7 +13,6 @@ from transformers import (
     TrainingArguments,
     DataCollatorForLanguageModeling,
 )
-from peft import LoraConfig, get_peft_model, TaskType
 import wandb
 from tqdm import tqdm
 
@@ -23,7 +22,7 @@ class GomokuTrainer:
         model_name: str = "gpt2-medium",
         data_dir: str = "data/processed/gomoku_dataset",
         output_dir: str = "models",
-        wandb_project: Optional[str] = "gomoku-gpt2",
+        wandb_project: Optional[str] = None,
     ):
         """
         Initialize the Gomoku GPT-2 trainer.
@@ -42,7 +41,12 @@ class GomokuTrainer:
         
         # Initialize W&B if enabled
         if self.wandb_project:
-            wandb.init(project=self.wandb_project)
+            try:
+                wandb.init(project=self.wandb_project)
+            except Exception as e:
+                print(f"Warning: Failed to initialize wandb: {e}")
+                print("Training will continue without wandb logging.")
+                self.wandb_project = None
         
         # Load tokenizer and model
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -55,8 +59,8 @@ class GomokuTrainer:
         # Load base model
         self.model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            load_in_8bit=False,  # Set to True for quantization if needed
-            torch_dtype=torch.float16,
+            load_in_8bit=False,
+            torch_dtype=torch.float32,
             device_map="auto",
         )
         
@@ -102,37 +106,43 @@ class GomokuTrainer:
     
     def setup_peft(
         self,
-        r: int = 8,
-        lora_alpha: int = 32,
-        lora_dropout: float = 0.1,
         frozen_layers: int = 12,
     ):
-        """Set up parameter-efficient fine-tuning (LoRA)."""
-        # Configure LoRA
-        peft_config = LoraConfig(
-            task_type=TaskType.CAUSAL_LM,
-            r=r,
-            lora_alpha=lora_alpha,
-            lora_dropout=lora_dropout,
-            target_modules=["c_attn"],  # For GPT-2
-            bias="none",
-        )
+        """Set up fine-tuning by freezing most layers and training only a few."""
+        print("Using traditional fine-tuning on the final layers instead of LoRA...")
         
-        # Convert model to PEFT
-        self.model = get_peft_model(self.model, peft_config)
+        # First, freeze all parameters
+        for param in self.model.parameters():
+            param.requires_grad = False
         
-        # Freeze bottom layers
-        if frozen_layers > 0:
-            modules = [self.model.base_model.model.h[i] for i in range(frozen_layers)]
-            for module in modules:
-                for param in module.parameters():
-                    param.requires_grad = False
+        # Unfreeze final transformer blocks
+        if hasattr(self.model, 'transformer') and hasattr(self.model.transformer, 'h'):
+            # Calculate how many layers to unfreeze (total layers - frozen layers)
+            num_layers = len(self.model.transformer.h)
+            layers_to_unfreeze = max(0, num_layers - frozen_layers)
+            
+            # Unfreeze the final N transformer blocks
+            for i in range(num_layers - layers_to_unfreeze, num_layers):
+                for param in self.model.transformer.h[i].parameters():
+                    param.requires_grad = True
+            
+            print(f"Unfroze the final {layers_to_unfreeze} transformer blocks out of {num_layers} total")
+        else:
+            print("Warning: Could not locate transformer blocks. Model architecture may not be compatible.")
         
-        # Enable gradient checkpointing
-        self.model.gradient_checkpointing_enable()
+        # Always unfreeze the LM head
+        if hasattr(self.model, 'lm_head'):
+            for param in self.model.lm_head.parameters():
+                param.requires_grad = True
+            print("Unfroze the language model head")
+        
+        # Disable gradient checkpointing since it's causing issues
+        self.model.config.use_cache = True
         
         # Print trainable parameters
-        self.model.print_trainable_parameters()
+        trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
+        total_params = sum(p.numel() for p in self.model.parameters())
+        print(f"trainable params: {trainable_params:,} || all params: {total_params:,} || trainable%: {100 * trainable_params / total_params:.4f}")
     
     def train(
         self,
@@ -140,15 +150,15 @@ class GomokuTrainer:
         epochs: int = 3,
         batch_size: int = 8,
         gradient_accumulation_steps: int = 4,
-        learning_rate: float = 3e-5,
+        learning_rate: float = 2e-5,  # Slightly higher learning rate for standard fine-tuning
         warmup_steps: int = 100,
         max_grad_norm: float = 1.0,
-        fp16: bool = True,
+        fp16: bool = False,  # Disable FP16 training to avoid gradient scaling issues
         logging_steps: int = 50,
         save_steps: int = 500,
     ):
         """Train the model."""
-        # Training arguments
+        # Training arguments - simplified for standard fine-tuning
         training_args = TrainingArguments(
             output_dir=str(self.output_dir / output_name),
             num_train_epochs=epochs,
@@ -160,18 +170,14 @@ class GomokuTrainer:
             weight_decay=0.01,
             logging_dir=str(self.output_dir / f"{output_name}_logs"),
             logging_steps=logging_steps,
-            evaluation_strategy="steps",
-            eval_steps=save_steps,
-            save_strategy="steps",
             save_steps=save_steps,
             save_total_limit=3,
-            load_best_model_at_end=True,
-            metric_for_best_model="eval_loss",
-            greater_is_better=False,
-            fp16=fp16,
+            fp16=fp16,  # Now defaults to False
             max_grad_norm=max_grad_norm,
-            report_to="wandb" if self.wandb_project else "none",
-            run_name=output_name if self.wandb_project else None,
+            report_to="none",  # Disable all reporting to avoid wandb issues
+            run_name=output_name,
+            optim="adamw_torch",  # Use PyTorch's AdamW instead of the transformers one
+            remove_unused_columns=False,  # Keep all columns
         )
         
         # Data collator for language modeling
@@ -209,13 +215,11 @@ def main():
     parser.add_argument("--model", type=str, default="gpt2-medium", help="Base model to fine-tune")
     parser.add_argument("--data_dir", type=str, default="data/processed/gomoku_dataset", help="Path to processed dataset")
     parser.add_argument("--output_dir", type=str, default="models", help="Directory to save model checkpoints")
-    parser.add_argument("--wandb_project", type=str, default="gomoku-gpt2", help="W&B project name (None to disable)")
+    parser.add_argument("--wandb_project", type=str, default=None, help="W&B project name (None to disable)")
     parser.add_argument("--epochs", type=int, default=3, help="Number of training epochs")
-    parser.add_argument("--batch_size", type=int, default=8, help="Training batch size")
-    parser.add_argument("--lr", type=float, default=3e-5, help="Learning rate")
-    parser.add_argument("--r", type=int, default=8, help="LoRA rank")
-    parser.add_argument("--lora_alpha", type=int, default=32, help="LoRA alpha")
-    parser.add_argument("--frozen_layers", type=int, default=12, help="Number of frozen layers")
+    parser.add_argument("--batch_size", type=int, default=4, help="Training batch size (reduced to save memory)")
+    parser.add_argument("--lr", type=float, default=1e-5, help="Learning rate (lowered for stability)")
+    parser.add_argument("--frozen_layers", type=int, default=18, help="Number of frozen layers at the bottom (increased)")
     
     args = parser.parse_args()
     
@@ -228,11 +232,7 @@ def main():
     
     trainer.load_dataset()
     trainer.preprocess_dataset()
-    trainer.setup_peft(
-        r=args.r,
-        lora_alpha=args.lora_alpha,
-        frozen_layers=args.frozen_layers,
-    )
+    trainer.setup_peft(frozen_layers=args.frozen_layers)
     trainer.train(
         epochs=args.epochs,
         batch_size=args.batch_size,

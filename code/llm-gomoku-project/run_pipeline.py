@@ -31,6 +31,10 @@ def main():
     parser.add_argument("--model", type=str, default="gpt2-medium", help="Base model to fine-tune")
     parser.add_argument("--epochs", type=int, default=3, help="Number of training epochs")
     parser.add_argument("--output_dir", type=str, default="models", help="Directory to save models")
+    parser.add_argument("--model_path", type=str, help="Path to a saved model for evaluation/demo (overrides default path)")
+    parser.add_argument("--batch_size", type=int, default=4, help="Training batch size")
+    parser.add_argument("--frozen_layers", type=int, default=18, help="Number of frozen layers")
+    parser.add_argument("--lr", type=float, default=1e-5, help="Learning rate")
     args = parser.parse_args()
     
     # Check if at least one action is specified
@@ -39,7 +43,9 @@ def main():
     
     # Set paths
     model_name = "gomoku-gpt2"
-    model_path = Path(args.output_dir) / f"{model_name}_final"
+    default_model_path = Path(args.output_dir) / f"{model_name}_final"
+    # Use the provided model_path if available, otherwise use the default
+    model_path = args.model_path if args.model_path else default_model_path
     timestamp = time.strftime("%Y%m%d_%H%M%S")
     
     # Run the complete pipeline or individual steps
@@ -57,7 +63,7 @@ def main():
     
     if args.all or args.train:
         run_command(
-            f"python src/trainer.py --model {args.model} --epochs {args.epochs} --output_dir {args.output_dir}",
+            f"python src/trainer.py --model {args.model} --epochs {args.epochs} --output_dir {args.output_dir} --batch_size {args.batch_size} --frozen_layers {args.frozen_layers} --lr {args.lr}",
             "Training the model"
         )
     

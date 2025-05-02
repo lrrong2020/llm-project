@@ -10,7 +10,6 @@ from datasets import load_from_disk
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 from tqdm import tqdm
-import evaluate
 
 class GomokuEvaluator:
     def __init__(
@@ -39,33 +38,45 @@ class GomokuEvaluator:
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_path)
         
         # Load model
-        if os.path.exists(os.path.join(self.model_path, "adapter_config.json")):
-            # This is a PEFT/LoRA model
-            base_model_path = self._get_base_model_path()
+        try:
+            if os.path.exists(os.path.join(self.model_path, "adapter_config.json")):
+                # This is a PEFT/LoRA model
+                base_model_path = self._get_base_model_path()
+                print(f"Loading base model from {base_model_path}")
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    base_model_path,
+                    torch_dtype=torch.float32,
+                    device_map="auto",
+                )
+                print(f"Loading adapter from {self.model_path}")
+                self.model = PeftModel.from_pretrained(
+                    self.model,
+                    self.model_path,
+                    torch_dtype=torch.float32,
+                    device_map="auto",
+                )
+            else:
+                # Standard model
+                print(f"Loading standard model from {self.model_path}")
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    self.model_path,
+                    torch_dtype=torch.float32,
+                    device_map="auto",
+                )
+            print("Model loaded successfully")
+        except Exception as e:
+            print(f"Error loading model: {e}")
+            print("Trying with different configuration...")
+            # Fallback to simpler loading parameters
             self.model = AutoModelForCausalLM.from_pretrained(
-                base_model_path,
-                torch_dtype=torch.float16,
+                self.model_path if isinstance(self.model_path, str) else str(self.model_path),
+                low_cpu_mem_usage=True,
                 device_map="auto",
             )
-            self.model = PeftModel.from_pretrained(
-                self.model,
-                self.model_path,
-                torch_dtype=torch.float16,
-                device_map="auto",
-            )
-        else:
-            # Standard model
-            self.model = AutoModelForCausalLM.from_pretrained(
-                self.model_path,
-                torch_dtype=torch.float16,
-                device_map="auto",
-            )
+            print("Model loaded with fallback method")
         
-        # Prepare evaluation metrics
-        self.metrics = {
-            "exact_match": evaluate.load("exact_match"),
-            "accuracy": evaluate.load("accuracy"),
-        }
+        # No need for external metrics library
+        print("Evaluation initialized successfully")
         
     def _get_base_model_path(self) -> str:
         """Get base model path from adapter config."""
@@ -115,35 +126,57 @@ class GomokuEvaluator:
         self.model.eval()
         with torch.no_grad():
             for ex in tqdm(examples):
-                prompt = ex["prompt"]
-                reference = ex["reference"]
-                
-                # Tokenize the prompt
-                inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
-                
-                # Generate prediction
-                output = self.model.generate(
-                    inputs["input_ids"],
-                    max_new_tokens=max_new_tokens,
-                    temperature=temperature,
-                    top_p=top_p,
-                    top_k=top_k,
-                    pad_token_id=self.tokenizer.eos_token_id,
-                )
-                
-                # Decode prediction, remove the prompt part
-                prediction_text = self.tokenizer.decode(output[0], skip_special_tokens=False)
-                prediction = prediction_text.split("<move>")[1].split("</move>")[0].strip()
-                
-                # Store results
-                results.append({
-                    "game_id": ex["game_id"],
-                    "turn_idx": ex["turn_idx"],
-                    "prompt": prompt,
-                    "reference": reference,
-                    "prediction": prediction,
-                    "matched": prediction == reference,
-                })
+                try:
+                    prompt = ex["prompt"]
+                    reference = ex["reference"]
+                    
+                    # Tokenize the prompt
+                    inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
+                    
+                    # Generate prediction
+                    output = self.model.generate(
+                        inputs["input_ids"],
+                        max_new_tokens=max_new_tokens,
+                        temperature=temperature,
+                        top_p=top_p,
+                        top_k=top_k,
+                        pad_token_id=self.tokenizer.eos_token_id,
+                    )
+                    
+                    # Decode prediction, remove the prompt part
+                    prediction_text = self.tokenizer.decode(output[0], skip_special_tokens=False)
+                    
+                    # Safely extract the move part
+                    try:
+                        if "<move>" in prediction_text and "</move>" in prediction_text:
+                            prediction = prediction_text.split("<move>")[1].split("</move>")[0].strip()
+                        else:
+                            # Fallback if tags aren't found
+                            prediction = prediction_text.replace(prompt, "").strip()
+                    except Exception as e:
+                        print(f"Error extracting prediction: {e}")
+                        prediction = "ERROR"
+                    
+                    # Store results
+                    results.append({
+                        "game_id": ex["game_id"],
+                        "turn_idx": ex["turn_idx"],
+                        "prompt": prompt,
+                        "reference": reference,
+                        "prediction": prediction,
+                        "matched": prediction == reference,
+                    })
+                except Exception as e:
+                    print(f"Error processing example: {e}")
+                    # Add a placeholder for the failed example
+                    results.append({
+                        "game_id": ex.get("game_id", "unknown"),
+                        "turn_idx": ex.get("turn_idx", -1),
+                        "prompt": ex.get("prompt", ""),
+                        "reference": ex.get("reference", ""),
+                        "prediction": "ERROR",
+                        "matched": False,
+                    })
         
         return results
     
@@ -152,19 +185,17 @@ class GomokuEvaluator:
         references = [ex["reference"] for ex in results]
         predictions = [ex["prediction"] for ex in results]
         
-        # Calculate exact match and accuracy
-        metrics = {}
-        metrics.update(self.metrics["exact_match"].compute(
-            predictions=predictions,
-            references=references,
-        ))
-        metrics.update(self.metrics["accuracy"].compute(
-            predictions=predictions,
-            references=references,
-        ))
+        # Calculate exact match manually
+        exact_matches = sum(1 for pred, ref in zip(predictions, references) if pred == ref)
+        total = len(predictions)
         
-        # Add total examples count
-        metrics["total_examples"] = len(results)
+        # Calculate metrics
+        metrics = {
+            "exact_match": exact_matches / total if total > 0 else 0,
+            "accuracy": exact_matches / total if total > 0 else 0,
+            "total_examples": total,
+            "correct_predictions": exact_matches,
+        }
         
         return metrics
     
@@ -215,7 +246,7 @@ def main():
     parser.add_argument("--data_dir", type=str, required=True, help="Path to processed dataset")
     parser.add_argument("--output_dir", type=str, default="evaluation_results", help="Directory to save evaluation results")
     parser.add_argument("--split", type=str, default="test", help="Dataset split to evaluate on")
-    parser.add_argument("--num_examples", type=int, default=None, help="Number of examples to evaluate (None for all)")
+    parser.add_argument("--num_examples", type=int, default=100, help="Number of examples to evaluate (None for all)")
     
     args = parser.parse_args()
     

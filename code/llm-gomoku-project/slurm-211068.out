@@ -1,0 +1,103 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 2.2.5
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+Traceback (most recent call last):
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1967, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 69, in <module>
+    from .loss.loss_utils import LOSS_MAPPING
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/loss/loss_utils.py", line 21, in <module>
+    from .loss_deformable_detr import DeformableDetrForObjectDetectionLoss, DeformableDetrForSegmentationLoss
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/loss/loss_deformable_detr.py", line 6, in <module>
+    from .loss_for_object_detection import (
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/loss/loss_for_object_detection.py", line 28, in <module>
+    from scipy.optimize import linear_sum_assignment
+  File "/usr/lib/python3/dist-packages/scipy/optimize/__init__.py", line 399, in <module>
+    from ._optimize import *
+  File "/usr/lib/python3/dist-packages/scipy/optimize/_optimize.py", line 30, in <module>
+    from numpy import (atleast_1d, eye, argmin, zeros, shape, squeeze,
+ImportError: cannot import name 'Inf' from 'numpy' (/home/rliubk/.local/lib/python3.10/site-packages/numpy/__init__.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1967, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/integrations/integration_utils.py", line 36, in <module>
+    from .. import PreTrainedModel, TFPreTrainedModel
+  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1955, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1969, in _get_module
+    raise RuntimeError(
+RuntimeError: Failed to import transformers.modeling_utils because of the following error (look up to see its traceback):
+cannot import name 'Inf' from 'numpy' (/home/rliubk/.local/lib/python3.10/site-packages/numpy/__init__.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1967, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/trainer.py", line 41, in <module>
+    from .integrations import (
+  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1955, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1969, in _get_module
+    raise RuntimeError(
+RuntimeError: Failed to import transformers.integrations.integration_utils because of the following error (look up to see its traceback):
+Failed to import transformers.modeling_utils because of the following error (look up to see its traceback):
+cannot import name 'Inf' from 'numpy' (/home/rliubk/.local/lib/python3.10/site-packages/numpy/__init__.py)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/src/trainer.py", line 9, in <module>
+    from transformers import (
+  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1955, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "/home/rliubk/.local/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1969, in _get_module
+    raise RuntimeError(
+RuntimeError: Failed to import transformers.trainer because of the following error (look up to see its traceback):
+Failed to import transformers.integrations.integration_utils because of the following error (look up to see its traceback):
+Failed to import transformers.modeling_utils because of the following error (look up to see its traceback):
+cannot import name 'Inf' from 'numpy' (/home/rliubk/.local/lib/python3.10/site-packages/numpy/__init__.py)
+
+==================================================
+  Training the model
+==================================================
+Running: python src/trainer.py --model gpt2-medium --epochs 3 --output_dir models
+Traceback (most recent call last):
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/run_pipeline.py", line 79, in <module>
+    main() 
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/run_pipeline.py", line 59, in main
+    run_command(
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/run_pipeline.py", line 19, in run_command
+    result = subprocess.run(command, shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'python src/trainer.py --model gpt2-medium --epochs 3 --output_dir models' returned non-zero exit status 1.

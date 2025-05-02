@@ -1,0 +1,57 @@
+wandb: ERROR api_key not configured (no-tty). call wandb.login(key=[your_api_key])
+Traceback (most recent call last):
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/src/trainer.py", line 248, in <module>
+    main()
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/src/trainer.py", line 227, in main
+    trainer = GomokuTrainer(
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/src/trainer.py", line 45, in __init__
+    wandb.init(project=self.wandb_project)
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1664, in init
+    wandb._sentry.reraise(e)
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/analytics/sentry.py", line 156, in reraise
+    raise exc.with_traceback(sys.exc_info()[2])
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1596, in init
+    wi.maybe_login(init_settings)
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 208, in maybe_login
+    wandb_login._login(
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 314, in _login
+    key, key_status = wlogin.prompt_api_key(referrer=referrer)
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 242, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.errors.UsageError: api_key not configured (no-tty). call wandb.login(key=[your_api_key])
+Traceback (most recent call last):
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/src/trainer.py", line 248, in <module>
+    main() 
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/src/trainer.py", line 227, in main
+    trainer = GomokuTrainer(
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/src/trainer.py", line 45, in __init__
+    wandb.init(project=self.wandb_project)
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1664, in init
+    wandb._sentry.reraise(e)
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/analytics/sentry.py", line 156, in reraise
+    raise exc.with_traceback(sys.exc_info()[2])
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1596, in init
+    wi.maybe_login(init_settings)
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 208, in maybe_login
+    wandb_login._login(
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 314, in _login
+    key, key_status = wlogin.prompt_api_key(referrer=referrer)
+  File "/home/rliubk/.local/lib/python3.10/site-packages/wandb/sdk/wandb_login.py", line 242, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.errors.UsageError: api_key not configured (no-tty). call wandb.login(key=[your_api_key])
+Running: python src/trainer.py --model gpt2-medium --epochs 1 --output_dir models
+
+==================================================
+  Training the model
+==================================================
+Running: python run_no_ds.py --model gpt2-medium --epochs 1 --output_dir models
+Traceback (most recent call last):
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/run_pipeline.py", line 79, in <module>
+    main() 
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/run_pipeline.py", line 59, in main
+    run_command(
+  File "/home/rliubk/llm/llm-project/code/llm-gomoku-project/run_pipeline.py", line 19, in run_command
+    result = subprocess.run(command, shell=True, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'python run_no_ds.py --model gpt2-medium --epochs 1 --output_dir models' returned non-zero exit status 1.

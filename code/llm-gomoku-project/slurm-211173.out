@@ -1,0 +1,26 @@
+Loading standard model from models/gomoku-gpt2_final
+Model loaded successfully
+Evaluation initialized successfully
+Loaded 10657 examples for evaluation
+  0%|          | 0/100 [00:00<?, ?it/s]100%|██████████| 100/100 [00:00<00:00, 39527.89it/s]
+  0%|          | 0/100 [00:00<?, ?it/s]/home/rliubk/.local/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:631: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/home/rliubk/.local/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:636: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+  1%|          | 1/100 [00:00<00:55,  1.79it/s]  3%|▎         | 3/100 [00:00<00:18,  5.23it/s]  5%|▌         | 5/100 [00:00<00:11,  8.00it/s]  7%|▋         | 7/100 [00:00<00:09, 10.16it/s]  9%|▉         | 9/100 [00:01<00:07, 11.79it/s] 11%|█         | 11/100 [00:01<00:06, 12.99it/s] 13%|█▎        | 13/100 [00:01<00:06, 13.88it/s] 15%|█▌        | 15/100 [00:01<00:05, 14.51it/s] 17%|█▋        | 17/100 [00:01<00:05, 14.97it/s] 19%|█▉        | 19/100 [00:01<00:05, 15.30it/s] 21%|██        | 21/100 [00:01<00:05, 15.53it/s] 23%|██▎       | 23/100 [00:01<00:04, 15.68it/s] 25%|██▌       | 25/100 [00:02<00:04, 15.80it/s] 27%|██▋       | 27/100 [00:02<00:04, 15.85it/s] 29%|██▉       | 29/100 [00:02<00:04, 15.92it/s] 31%|███       | 31/100 [00:02<00:04, 15.95it/s] 33%|███▎      | 33/100 [00:02<00:04, 15.99it/s] 35%|███▌      | 35/100 [00:02<00:04, 16.01it/s] 37%|███▋      | 37/100 [00:02<00:03, 16.01it/s] 39%|███▉      | 39/100 [00:02<00:03, 16.02it/s] 41%|████      | 41/100 [00:03<00:03, 16.04it/s] 43%|████▎     | 43/100 [00:03<00:03, 16.05it/s] 45%|████▌     | 45/100 [00:03<00:03, 16.07it/s] 47%|████▋     | 47/100 [00:03<00:03, 16.05it/s] 49%|████▉     | 49/100 [00:03<00:03, 16.05it/s] 51%|█████     | 51/100 [00:03<00:03, 16.05it/s] 53%|█████▎    | 53/100 [00:03<00:02, 16.04it/s] 55%|█████▌    | 55/100 [00:03<00:02, 16.02it/s] 57%|█████▋    | 57/100 [00:04<00:02, 16.03it/s] 59%|█████▉    | 59/100 [00:04<00:02, 16.05it/s] 61%|██████    | 61/100 [00:04<00:02, 16.07it/s] 63%|██████▎   | 63/100 [00:04<00:02, 16.06it/s] 65%|██████▌   | 65/100 [00:04<00:02, 16.07it/s] 67%|██████▋   | 67/100 [00:04<00:02, 16.07it/s] 69%|██████▉   | 69/100 [00:04<00:01, 16.08it/s] 71%|███████   | 71/100 [00:04<00:01, 16.06it/s] 73%|███████▎  | 73/100 [00:05<00:01, 16.06it/s] 75%|███████▌  | 75/100 [00:05<00:01, 16.06it/s] 77%|███████▋  | 77/100 [00:05<00:01, 16.07it/s] 79%|███████▉  | 79/100 [00:05<00:01, 16.06it/s] 81%|████████  | 81/100 [00:05<00:01, 16.06it/s] 83%|████████▎ | 83/100 [00:05<00:01, 16.06it/s] 85%|████████▌ | 85/100 [00:05<00:00, 16.06it/s] 87%|████████▋ | 87/100 [00:05<00:00, 16.06it/s] 89%|████████▉ | 89/100 [00:06<00:00, 16.04it/s] 91%|█████████ | 91/100 [00:06<00:00, 16.06it/s] 93%|█████████▎| 93/100 [00:06<00:00, 16.08it/s] 95%|█████████▌| 95/100 [00:06<00:00, 16.06it/s] 97%|█████████▋| 97/100 [00:06<00:00, 16.05it/s] 99%|█████████▉| 99/100 [00:06<00:00, 16.02it/s]100%|██████████| 100/100 [00:06<00:00, 14.87it/s]
+Evaluation results saved to evaluation_results/results_20250502_171126.csv
+Evaluation metrics saved to evaluation_results/metrics_20250502_171126.json
+
+Evaluation Metrics:
+  exact_match: 0.01
+  accuracy: 0.01
+  total_examples: 100
+  correct_predictions: 1
+
+==================================================
+  Evaluating the model
+==================================================
+Running: python src/evaluate.py --model_path models/gomoku-gpt2_final --data_dir data/processed/gomoku_dataset --output_dir evaluation_results
+
+Pipeline completed successfully!
