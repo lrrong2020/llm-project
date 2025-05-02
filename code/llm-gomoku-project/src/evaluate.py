@@ -112,7 +112,7 @@ class GomokuEvaluator:
             examples.append(example)
         return examples
     
-    def generate_predictions(
+    def generate_predictions_old(
         self,
         examples: List[Dict],
         max_new_tokens: int = 10,
@@ -153,6 +153,83 @@ class GomokuEvaluator:
                         else:
                             # Fallback if tags aren't found
                             prediction = prediction_text.replace(prompt, "").strip()
+                    except Exception as e:
+                        print(f"Error extracting prediction: {e}")
+                        prediction = "ERROR"
+                    
+                    # Store results
+                    results.append({
+                        "game_id": ex["game_id"],
+                        "turn_idx": ex["turn_idx"],
+                        "prompt": prompt,
+                        "reference": reference,
+                        "prediction": prediction,
+                        "matched": prediction == reference,
+                    })
+                except Exception as e:
+                    print(f"Error processing example: {e}")
+                    # Add a placeholder for the failed example
+                    results.append({
+                        "game_id": ex.get("game_id", "unknown"),
+                        "turn_idx": ex.get("turn_idx", -1),
+                        "prompt": ex.get("prompt", ""),
+                        "reference": ex.get("reference", ""),
+                        "prediction": "ERROR",
+                        "matched": False,
+                    })
+        
+        return results
+    
+    def generate_predictions(
+        self,
+        examples: List[Dict],
+        max_new_tokens: int = 10,
+        temperature: float = 0.7,
+        top_p: float = 0.9,
+        top_k: int = 50,
+        do_sample: bool = True,  # Enable sampling by default
+    ) -> List[Dict]:
+        """Generate predictions for evaluation examples."""
+        results = []
+        
+        self.model.eval()
+        with torch.no_grad():
+            for ex in tqdm(examples):
+                try:
+                    prompt = ex["prompt"]
+                    reference = ex["reference"]
+                    
+                    # Tokenize the prompt with explicit attention mask
+                    inputs = self.tokenizer(
+                        prompt, 
+                        return_tensors="pt",
+                        padding=True,
+                        return_attention_mask=True
+                    ).to(self.model.device)
+                    
+                    # Generate prediction with sampling enabled
+                    output = self.model.generate(
+                        inputs["input_ids"],
+                        attention_mask=inputs["attention_mask"],
+                        max_new_tokens=max_new_tokens,
+                        do_sample=do_sample,  # Enable sampling
+                        temperature=temperature,
+                        top_p=top_p,
+                        top_k=top_k,
+                        pad_token_id=self.tokenizer.eos_token_id,
+                    )
+                    
+                    # Decode prediction, remove the prompt part
+                    prediction_text = self.tokenizer.decode(output[0], skip_special_tokens=False)
+                    
+                    # Safely extract the move part
+                    try:
+                        if "<move>" in prediction_text and "</move>" in prediction_text:
+                            prediction = prediction_text.split("<move>")[1].split("</move>")[0].strip()
+                        else:
+                            # Fallback if tags aren't found
+                            prompt_len = len(self.tokenizer.decode(inputs["input_ids"][0], skip_special_tokens=False))
+                            prediction = prediction_text[prompt_len:].strip()
                     except Exception as e:
                         print(f"Error extracting prediction: {e}")
                         prediction = "ERROR"
@@ -221,7 +298,7 @@ class GomokuEvaluator:
         for metric, value in metrics.items():
             print(f"  {metric}: {value}")
     
-    def evaluate(self, num_examples: Optional[int] = None):
+    def evaluate(self, num_examples: Optional[int] = None, do_sample: bool = True, temperature: float = 0.7, top_p: float = 0.9):
         """Run the full evaluation pipeline."""
         # Load dataset
         self.load_dataset()
@@ -230,7 +307,7 @@ class GomokuEvaluator:
         examples = self.preprocess_examples(num_examples)
         
         # Generate predictions
-        results = self.generate_predictions(examples)
+        results = self.generate_predictions(examples, do_sample=do_sample, temperature=temperature, top_p=top_p)
         
         # Calculate metrics
         metrics = self.calculate_metrics(results)
@@ -247,6 +324,9 @@ def main():
     parser.add_argument("--output_dir", type=str, default="evaluation_results", help="Directory to save evaluation results")
     parser.add_argument("--split", type=str, default="test", help="Dataset split to evaluate on")
     parser.add_argument("--num_examples", type=int, default=100, help="Number of examples to evaluate (None for all)")
+    parser.add_argument("--do_sample", type=bool, default=True, help="Whether to use sampling")
+    parser.add_argument("--temperature", type=float, default=0.7, help="Sampling temperature")
+    parser.add_argument("--top_p", type=float, default=0.9, help="Nucleus sampling top_p")
     
     args = parser.parse_args()
     
@@ -257,7 +337,7 @@ def main():
         split=args.split,
     )
     
-    evaluator.evaluate(num_examples=args.num_examples)
+    evaluator.evaluate(num_examples=args.num_examples, do_sample=args.do_sample, temperature=args.temperature, top_p=args.top_p)
 
 if __name__ == "__main__":
-    main() 
+    main()
