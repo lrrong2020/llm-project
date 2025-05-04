@@ -1,0 +1,41 @@
+Mon May  5 02:10:11 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.129.03             Driver Version: 535.129.03   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA H800                    On  | 00000000:9D:00.0 Off |                    0 |
+| N/A   25C    P0              71W / 700W |      4MiB / 81559MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+/home/rliubk/.conda/envs/werewolf/bin/python
+PyTorch: 2.2.0+cu121, CUDA: True
+===== 开始 SFT 微调 Mon May  5 02:10:19 AM HKT 2025 =====
+开始训练 - 阶段: sft
+数据目录: .
+输出目录: output
+模型路径: Qwen/Qwen2.5-1.5B
+批次大小: 2，梯度累积: 4
+SwanLab: 使用提供的API密钥
+正在使用API密钥登录SwanLab...
+[1m[34mswanlab[0m[0m: \ Waiting for the swanlab cloud response.[1m[34mswanlab[0m[0m: | Waiting for the swanlab cloud response.[1m[34mswanlab[0m[0m: / Waiting for the swanlab cloud response.                                                                                                    SwanLab登录成功!
+[1m[34mswanlab[0m[0m: \ Getting project...[1m[34mswanlab[0m[0m: | Getting project...[1m[34mswanlab[0m[0m: / Getting project...[1m[34mswanlab[0m[0m: - Getting project...[1m[34mswanlab[0m[0m: \ Getting project...[1m[34mswanlab[0m[0m: | Getting project...[1m[34mswanlab[0m[0m: / Getting project...[1m[34mswanlab[0m[0m: - Getting project...                                                                                                    [1m[34mswanlab[0m[0m: \ Creating experiment...[1m[34mswanlab[0m[0m: | Creating experiment...[1m[34mswanlab[0m[0m: / Creating experiment...[1m[34mswanlab[0m[0m: - Creating experiment...[1m[34mswanlab[0m[0m: \ Creating experiment...[1m[34mswanlab[0m[0m: | Creating experiment...[1m[34mswanlab[0m[0m: / Creating experiment...[1m[34mswanlab[0m[0m: - Creating experiment...[1m[34mswanlab[0m[0m: \ Creating experiment...                                                                                                    [1m[34mswanlab[0m[0m: Tracking run with swanlab version 0.5.7
+[1m[34mswanlab[0m[0m: Run data will be saved locally in [35m[1m/home/rliubk/llm-project/werewolf_game_reasoning/swanlog/run-20250505_021158-a3b1799d[0m[0m
+[1m[34mswanlab[0m[0m: 👋 Hi [1m[39msurmountrt[0m[0m, welcome to swanlab!
+[1m[34mswanlab[0m[0m: Syncing run [33msft[0m to the cloud
+[1m[34mswanlab[0m[0m: 🏠 View project at [34m[4mhttps://swanlab.cn/@surmountrt/Werewolf-LoRA[0m[0m
+[1m[34mswanlab[0m[0m: 🚀 View run at [34m[4mhttps://swanlab.cn/@surmountrt/Werewolf-LoRA/runs/tjapvmczh60vikhyth0gu[0m[0m
+[1m[34mswanlab[0m[0m: Error happened while training
+[1m[34mswanlab[0m[0m: 🏠 View project at [34m[4mhttps://swanlab.cn/@surmountrt/Werewolf-LoRA[0m[0m
+[1m[34mswanlab[0m[0m: 🚀 View run at [34m[4mhttps://swanlab.cn/@surmountrt/Werewolf-LoRA/runs/tjapvmczh60vikhyth0gu[0m[0m
+[1m[34mswanlab[0m[0m: \ Waiting for uploading complete[1m[34mswanlab[0m[0m: | Waiting for uploading complete[1m[34mswanlab[0m[0m: / Waiting for uploading complete[1m[34mswanlab[0m[0m: - Waiting for uploading complete[1m[34mswanlab[0m[0m: \ Waiting for uploading complete[1m[34mswanlab[0m[0m: | Waiting for uploading complete[1m[34mswanlab[0m[0m: / Waiting for uploading complete[1m[34mswanlab[0m[0m: - Waiting for uploading complete[1m[34mswanlab[0m[0m: \ Waiting for uploading complete[1m[34mswanlab[0m[0m: | Waiting for uploading complete[1m[34mswanlab[0m[0m: / Waiting for uploading complete[1m[34mswanlab[0m[0m: - Waiting for uploading complete[1m[34mswanlab[0m[0m: \ Waiting for uploading complete[1m[34mswanlab[0m[0m: | Waiting for uploading complete[1m[34mswanlab[0m[0m: / Waiting for uploading complete[1m[34mswanlab[0m[0m: - Waiting for uploading complete[1m[34mswanlab[0m[0m: \ Waiting for uploading complete[1m[34mswanlab[0m[0m: | Waiting for uploading complete[1m[34mswanlab[0m[0m: / Waiting for uploading complete[1m[34mswanlab[0m[0m: - Waiting for uploading complete[1m[34mswanlab[0m[0m: \ Waiting for uploading complete[1m[34mswanlab[0m[0m: | Waiting for uploading complete[1m[34mswanlab[0m[0m: / Waiting for uploading complete[1m[34mswanlab[0m[0m: - Waiting for uploading complete[1m[34mswanlab[0m[0m: \ Waiting for uploading complete[1m[34mswanlab[0m[0m: | Waiting for uploading complete[1m[34mswanlab[0m[0m: / Waiting for uploading complete[1m[34mswanlab[0m[0m: - Waiting for uploading complete[1m[34mswanlab[0m[0m: \ Waiting for uploading complete                                                                                                    [1m[34mswanlab[0m[0m: \ Updating experiment status...[1m[34mswanlab[0m[0m: | Updating experiment status...                                                                                                    ===== SFT 微调完成 Mon May  5 02:12:21 AM HKT 2025 =====

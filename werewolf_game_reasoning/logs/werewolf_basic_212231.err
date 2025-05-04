@@ -1,0 +1,48 @@
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 752 examples [00:00, 30098.83 examples/s]
+Map:   0%|          | 0/752 [00:00<?, ? examples/s]Map: 100%|██████████| 752/752 [00:00<00:00, 24230.38 examples/s]
+/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Map:   0%|          | 0/676 [00:00<?, ? examples/s]Map: 100%|██████████| 676/676 [00:03<00:00, 187.43 examples/s]Map: 100%|██████████| 676/676 [00:03<00:00, 184.81 examples/s]
+Map:   0%|          | 0/76 [00:00<?, ? examples/s]Map: 100%|██████████| 76/76 [00:00<00:00, 181.52 examples/s]Map: 100%|██████████| 76/76 [00:00<00:00, 175.69 examples/s]
+Traceback (most recent call last):
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/swanlab/data/callbacker/cloud.py", line 105, in on_init
+    http = get_http()
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/swanlab/api/http.py", line 340, in get_http
+    raise ValueError("http object is not initialized")
+ValueError: http object is not initialized
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rliubk/llm-project/werewolf_game_reasoning/train_werewolf.py", line 266, in <module>
+    main() 
+  File "/home/rliubk/llm-project/werewolf_game_reasoning/train_werewolf.py", line 253, in main
+    train_basic(args.model_dir, basic_dir, data_dir, args)
+  File "/home/rliubk/llm-project/werewolf_game_reasoning/train_werewolf.py", line 159, in train_basic
+    trainer.train()
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 2036, in _inner_training_loop
+    self.control = self.callback_handler.on_train_begin(args, self.state, self.control)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer_callback.py", line 370, in on_train_begin
+    return self.call_event("on_train_begin", args, state, control)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer_callback.py", line 414, in call_event
+    result = getattr(callback, event)(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/swanlab/integration/transformers.py", line 215, in on_train_begin
+    self.setup(args, state, model, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/swanlab/integration/transformers.py", line 167, in setup
+    self._swanlab.init(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/swanlab/data/sdk.py", line 194, in init
+    operator.on_init(project, workspace, logdir=logdir),
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/swanlab/data/run/helper.py", line 75, in on_init
+    return self.__run_all(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/swanlab/data/run/helper.py", line 59, in __run_all
+    return {name: getattr(callback, method)(*args, **kwargs) for name, callback in self.callbacks.items()}
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/swanlab/data/run/helper.py", line 59, in <dictcomp>
+    return {name: getattr(callback, method)(*args, **kwargs) for name, callback in self.callbacks.items()}
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/swanlab/data/callbacker/cloud.py", line 108, in on_init
+    http = create_http(self.create_login_info())
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/swanlab/data/callbacker/cloud.py", line 56, in create_login_info
+    raise KeyFileError(
+swanlab.error.KeyFileError: api key not configured (no-tty), call `swanlab.login(api_key=[your_api_key])` or set `swanlab.init(mode="local")`.

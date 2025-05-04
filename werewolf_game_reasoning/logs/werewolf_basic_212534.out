@@ -1,0 +1,125 @@
+Mon May  5 01:46:16 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.129.03             Driver Version: 535.129.03   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA H800                    On  | 00000000:D1:00.0 Off |                    0 |
+| N/A   32C    P0              71W / 700W |      4MiB / 81559MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+/home/rliubk/.conda/envs/werewolf/bin/python
+PyTorch: 2.2.0+cu121, CUDA: True
+===== 开始基础知识微调 Mon May  5 01:46:19 AM HKT 2025 =====
+开始训练 - 阶段: basic
+数据目录: .
+输出目录: output
+模型路径: Qwen/Qwen2.5-1.5B
+批次大小: 4，梯度累积: 8
+SwanLab: 使用提供的API密钥
+正在使用API密钥登录SwanLab...
+[1m[34mswanlab[0m[0m: \ Waiting for the swanlab cloud response.[1m[34mswanlab[0m[0m: | Waiting for the swanlab cloud response.                                                                                                    SwanLab登录成功!
+[1m[34mswanlab[0m[0m: \ Getting project...[1m[34mswanlab[0m[0m: | Getting project...                                                                                                    [1m[34mswanlab[0m[0m: \ Creating experiment...[1m[34mswanlab[0m[0m: | Creating experiment...[1m[34mswanlab[0m[0m: / Creating experiment...[1m[34mswanlab[0m[0m: - Creating experiment...[1m[34mswanlab[0m[0m: \ Creating experiment...[1m[34mswanlab[0m[0m: | Creating experiment...                                                                                                    [1m[34mswanlab[0m[0m: Tracking run with swanlab version 0.5.7
+[1m[34mswanlab[0m[0m: Run data will be saved locally in [35m[1m/home/rliubk/llm-project/werewolf_game_reasoning/swanlog/run-20250505_014653-a3b1799d[0m[0m
+[1m[34mswanlab[0m[0m: 👋 Hi [1m[39msurmountrt[0m[0m, welcome to swanlab!
+[1m[34mswanlab[0m[0m: Syncing run [33mbasic[0m to the cloud
+[1m[34mswanlab[0m[0m: 🏠 View project at [34m[4mhttps://swanlab.cn/@surmountrt/Werewolf-LoRA[0m[0m
+[1m[34mswanlab[0m[0m: 🚀 View run at [34m[4mhttps://swanlab.cn/@surmountrt/Werewolf-LoRA/runs/urp9b3qtq6s1yeien3fsm[0m[0m
+{'loss': 3.39, 'grad_norm': 1.2030442953109741, 'learning_rate': 0.00019682539682539682, 'epoch': 0.05}
+{'loss': 3.4861, 'grad_norm': 1.170433521270752, 'learning_rate': 0.00019365079365079365, 'epoch': 0.09}
+{'loss': 3.3358, 'grad_norm': 1.2181838750839233, 'learning_rate': 0.00019047619047619048, 'epoch': 0.14}
+{'loss': 3.1998, 'grad_norm': 1.3386603593826294, 'learning_rate': 0.00018730158730158731, 'epoch': 0.19}
+{'loss': 3.2586, 'grad_norm': 2.1603355407714844, 'learning_rate': 0.00018412698412698412, 'epoch': 0.24}
+{'loss': 2.9627, 'grad_norm': 2.9365506172180176, 'learning_rate': 0.00018095238095238095, 'epoch': 0.28}
+{'loss': 3.1436, 'grad_norm': 1.235347032546997, 'learning_rate': 0.00017777777777777779, 'epoch': 0.33}
+{'loss': 3.0301, 'grad_norm': 0.6232649683952332, 'learning_rate': 0.00017460317460317462, 'epoch': 0.38}
+{'loss': 2.8014, 'grad_norm': 0.7412937879562378, 'learning_rate': 0.00017142857142857143, 'epoch': 0.43}
+{'loss': 3.2434, 'grad_norm': 0.7128344178199768, 'learning_rate': 0.00016825396825396826, 'epoch': 0.47}
+[1m[33mswanlab[0m[0m: Step 10 on key train/epoch already exists, ignored.
+[1m[33mswanlab[0m[0m: Step 10 on key train/global_step already exists, ignored.
+{'eval_loss': 2.813283920288086, 'eval_runtime': 3.5883, 'eval_samples_per_second': 21.18, 'eval_steps_per_second': 2.787, 'epoch': 0.47}
+{'loss': 2.5211, 'grad_norm': 0.6258028745651245, 'learning_rate': 0.0001650793650793651, 'epoch': 0.52}
+{'loss': 2.7759, 'grad_norm': 0.6633544564247131, 'learning_rate': 0.00016190476190476192, 'epoch': 0.57}
+{'loss': 2.4908, 'grad_norm': 0.8686954975128174, 'learning_rate': 0.00015873015873015873, 'epoch': 0.62}
+{'loss': 2.8896, 'grad_norm': 0.6560441255569458, 'learning_rate': 0.00015555555555555556, 'epoch': 0.66}
+{'loss': 2.7302, 'grad_norm': 0.7436069250106812, 'learning_rate': 0.00015238095238095237, 'epoch': 0.71}
+{'loss': 2.8213, 'grad_norm': 0.8332099914550781, 'learning_rate': 0.00014920634920634923, 'epoch': 0.76}
+{'loss': 2.9557, 'grad_norm': 0.7209479212760925, 'learning_rate': 0.00014603174603174603, 'epoch': 0.8}
+{'loss': 2.5788, 'grad_norm': 0.6933340430259705, 'learning_rate': 0.00014285714285714287, 'epoch': 0.85}
+{'loss': 2.8593, 'grad_norm': 0.6888540983200073, 'learning_rate': 0.00013968253968253967, 'epoch': 0.9}
+{'loss': 2.4762, 'grad_norm': 0.7336519360542297, 'learning_rate': 0.0001365079365079365, 'epoch': 0.95}
+[1m[33mswanlab[0m[0m: Step 20 on key train/epoch already exists, ignored.
+[1m[33mswanlab[0m[0m: Step 20 on key train/global_step already exists, ignored.
+{'eval_loss': 2.6455419063568115, 'eval_runtime': 3.5862, 'eval_samples_per_second': 21.193, 'eval_steps_per_second': 2.788, 'epoch': 0.95}
+{'loss': 2.6035, 'grad_norm': 0.623399555683136, 'learning_rate': 0.00013333333333333334, 'epoch': 0.99}
+{'loss': 2.3678, 'grad_norm': 0.6945940852165222, 'learning_rate': 0.00013015873015873017, 'epoch': 1.04}
+{'loss': 2.7194, 'grad_norm': 0.5561984181404114, 'learning_rate': 0.00012698412698412698, 'epoch': 1.09}
+{'loss': 2.754, 'grad_norm': 0.740951657295227, 'learning_rate': 0.0001238095238095238, 'epoch': 1.14}
+{'loss': 2.3147, 'grad_norm': 0.768286943435669, 'learning_rate': 0.00012063492063492063, 'epoch': 1.18}
+{'loss': 2.6678, 'grad_norm': 0.6782175302505493, 'learning_rate': 0.00011746031746031746, 'epoch': 1.23}
+{'loss': 2.8884, 'grad_norm': 0.6448821425437927, 'learning_rate': 0.00011428571428571428, 'epoch': 1.28}
+{'loss': 2.3968, 'grad_norm': 0.7460793852806091, 'learning_rate': 0.00011111111111111112, 'epoch': 1.33}
+{'loss': 2.5633, 'grad_norm': 0.557645320892334, 'learning_rate': 0.00010793650793650794, 'epoch': 1.37}
+{'loss': 2.6431, 'grad_norm': 0.6617985963821411, 'learning_rate': 0.00010476190476190477, 'epoch': 1.42}
+[1m[33mswanlab[0m[0m: Step 30 on key train/epoch already exists, ignored.
+[1m[33mswanlab[0m[0m: Step 30 on key train/global_step already exists, ignored.
+{'eval_loss': 2.5659267902374268, 'eval_runtime': 3.5862, 'eval_samples_per_second': 21.192, 'eval_steps_per_second': 2.788, 'epoch': 1.42}
+{'loss': 2.8167, 'grad_norm': 0.643854558467865, 'learning_rate': 0.00010158730158730159, 'epoch': 1.47}
+{'loss': 2.5847, 'grad_norm': 0.8356381058692932, 'learning_rate': 9.841269841269841e-05, 'epoch': 1.51}
+{'loss': 2.8473, 'grad_norm': 0.5530586838722229, 'learning_rate': 9.523809523809524e-05, 'epoch': 1.56}
+{'loss': 2.4638, 'grad_norm': 0.9146751761436462, 'learning_rate': 9.206349206349206e-05, 'epoch': 1.61}
+{'loss': 2.465, 'grad_norm': 0.798802375793457, 'learning_rate': 8.888888888888889e-05, 'epoch': 1.66}
+{'loss': 2.6581, 'grad_norm': 0.8096565008163452, 'learning_rate': 8.571428571428571e-05, 'epoch': 1.7}
+{'loss': 2.5169, 'grad_norm': 0.8110045194625854, 'learning_rate': 8.253968253968255e-05, 'epoch': 1.75}
+{'loss': 2.0646, 'grad_norm': 1.0680948495864868, 'learning_rate': 7.936507936507937e-05, 'epoch': 1.8}
+{'loss': 2.5373, 'grad_norm': 0.6330640912055969, 'learning_rate': 7.619047619047618e-05, 'epoch': 1.85}
+{'loss': 2.3738, 'grad_norm': 0.882750391960144, 'learning_rate': 7.301587301587302e-05, 'epoch': 1.89}
+[1m[33mswanlab[0m[0m: Step 40 on key train/epoch already exists, ignored.
+[1m[33mswanlab[0m[0m: Step 40 on key train/global_step already exists, ignored.
+{'eval_loss': 2.5159788131713867, 'eval_runtime': 3.5862, 'eval_samples_per_second': 21.192, 'eval_steps_per_second': 2.788, 'epoch': 1.89}
+{'loss': 2.6096, 'grad_norm': 0.7155808806419373, 'learning_rate': 6.984126984126984e-05, 'epoch': 1.94}
+{'loss': 2.4544, 'grad_norm': 0.9741674065589905, 'learning_rate': 6.666666666666667e-05, 'epoch': 1.99}
+{'loss': 2.5966, 'grad_norm': 0.6410738825798035, 'learning_rate': 6.349206349206349e-05, 'epoch': 2.04}
+{'loss': 2.2418, 'grad_norm': 1.0836528539657593, 'learning_rate': 6.0317460317460316e-05, 'epoch': 2.08}
+{'loss': 3.0435, 'grad_norm': 0.6874065399169922, 'learning_rate': 5.714285714285714e-05, 'epoch': 2.13}
+{'loss': 2.3251, 'grad_norm': 0.854375422000885, 'learning_rate': 5.396825396825397e-05, 'epoch': 2.18}
+{'loss': 2.4732, 'grad_norm': 1.0588716268539429, 'learning_rate': 5.0793650793650794e-05, 'epoch': 2.22}
+{'loss': 2.5959, 'grad_norm': 0.840362012386322, 'learning_rate': 4.761904761904762e-05, 'epoch': 2.27}
+{'loss': 2.2614, 'grad_norm': 0.7491780519485474, 'learning_rate': 4.4444444444444447e-05, 'epoch': 2.32}
+{'loss': 2.5802, 'grad_norm': 0.6121004223823547, 'learning_rate': 4.126984126984127e-05, 'epoch': 2.37}
+[1m[33mswanlab[0m[0m: Step 50 on key train/epoch already exists, ignored.
+[1m[33mswanlab[0m[0m: Step 50 on key train/global_step already exists, ignored.
+{'eval_loss': 2.487833261489868, 'eval_runtime': 3.5849, 'eval_samples_per_second': 21.2, 'eval_steps_per_second': 2.79, 'epoch': 2.37}
+{'loss': 2.5445, 'grad_norm': 0.6089858412742615, 'learning_rate': 3.809523809523809e-05, 'epoch': 2.41}
+{'loss': 2.6012, 'grad_norm': 0.9658604860305786, 'learning_rate': 3.492063492063492e-05, 'epoch': 2.46}
+{'loss': 2.2738, 'grad_norm': 0.9659824371337891, 'learning_rate': 3.1746031746031745e-05, 'epoch': 2.51}
+{'loss': 2.5131, 'grad_norm': 0.5817992687225342, 'learning_rate': 2.857142857142857e-05, 'epoch': 2.56}
+{'loss': 2.563, 'grad_norm': 0.7214640378952026, 'learning_rate': 2.5396825396825397e-05, 'epoch': 2.6}
+{'loss': 2.1387, 'grad_norm': 0.8787264823913574, 'learning_rate': 2.2222222222222223e-05, 'epoch': 2.65}
+{'loss': 2.3608, 'grad_norm': 0.7568339109420776, 'learning_rate': 1.9047619047619046e-05, 'epoch': 2.7}
+{'loss': 2.3246, 'grad_norm': 0.7565725445747375, 'learning_rate': 1.5873015873015872e-05, 'epoch': 2.75}
+{'loss': 2.2891, 'grad_norm': 0.7937684655189514, 'learning_rate': 1.2698412698412699e-05, 'epoch': 2.79}
+{'loss': 2.3192, 'grad_norm': 0.8375865817070007, 'learning_rate': 9.523809523809523e-06, 'epoch': 2.84}
+[1m[33mswanlab[0m[0m: Step 60 on key train/epoch already exists, ignored.
+[1m[33mswanlab[0m[0m: Step 60 on key train/global_step already exists, ignored.
+{'eval_loss': 2.4749836921691895, 'eval_runtime': 3.5889, 'eval_samples_per_second': 21.176, 'eval_steps_per_second': 2.786, 'epoch': 2.84}
+{'loss': 2.6275, 'grad_norm': 0.6178618669509888, 'learning_rate': 6.349206349206349e-06, 'epoch': 2.89}
+{'loss': 2.4538, 'grad_norm': 0.7774171829223633, 'learning_rate': 3.1746031746031746e-06, 'epoch': 2.93}
+{'loss': 2.4359, 'grad_norm': 0.7540309429168701, 'learning_rate': 0.0, 'epoch': 2.98}
+[1m[33mswanlab[0m[0m: Step 63 on key train/epoch already exists, ignored.
+[1m[33mswanlab[0m[0m: Step 63 on key train/global_step already exists, ignored.
+{'train_runtime': 368.4601, 'train_samples_per_second': 5.504, 'train_steps_per_second': 0.171, 'train_loss': 2.6480045205070857, 'epoch': 2.98}
+[1m[34mswanlab[0m[0m: Experiment [33mbasic[0m has completed
+[1m[34mswanlab[0m[0m: 🏠 View project at [34m[4mhttps://swanlab.cn/@surmountrt/Werewolf-LoRA[0m[0m
+[1m[34mswanlab[0m[0m: 🚀 View run at [34m[4mhttps://swanlab.cn/@surmountrt/Werewolf-LoRA/runs/urp9b3qtq6s1yeien3fsm[0m[0m
+[1m[34mswanlab[0m[0m: \ Waiting for uploading complete[1m[34mswanlab[0m[0m: | Waiting for uploading complete[1m[34mswanlab[0m[0m: / Waiting for uploading complete[1m[34mswanlab[0m[0m: - Waiting for uploading complete[1m[34mswanlab[0m[0m: \ Waiting for uploading complete                                                                                                    [1m[34mswanlab[0m[0m: \ Updating experiment status...                                                                                                    ===== 基础知识微调完成 Mon May  5 01:53:05 AM HKT 2025 =====

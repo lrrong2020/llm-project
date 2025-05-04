@@ -1,0 +1,22 @@
+/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+  0%|          | 0/4095 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/torch/utils/checkpoint.py:460: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  File "/home/rliubk/llm-project/werewolf_game_reasoning/train_werewolf.py", line 357, in <module>
+    main()
+  File "/home/rliubk/llm-project/werewolf_game_reasoning/train_werewolf.py", line 353, in main
+    train_sft(args.model_dir, basic_dir, sft_dir, data_dir, args)
+  File "/home/rliubk/llm-project/werewolf_game_reasoning/train_werewolf.py", line 288, in train_sft
+    trainer.train()
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 2181, in _inner_training_loop
+    self.optimizer.step()
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/accelerate/optimizer.py", line 132, in step
+    self.scaler.step(self.optimizer, closure)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/torch/cuda/amp/grad_scaler.py", line 449, in step
+    len(optimizer_state["found_inf_per_device"]) > 0
+No inf checks were recorded for this optimizer.
+  0%|          | 0/4095 [00:10<?, ?it/s]

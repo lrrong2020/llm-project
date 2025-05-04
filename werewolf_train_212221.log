@@ -1,0 +1,141 @@
+Sun May  4 17:15:40 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.129.03             Driver Version: 535.129.03   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA H800                    On  | 00000000:9D:00.0 Off |                    0 |
+| N/A   23C    P0              71W / 700W |      4MiB / 81559MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Retrieving notices: ...working... done
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 23.7.4
+  latest version: 25.3.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+Or to minimize the number of packages updated during conda update use
+
+     conda install conda=25.3.1
+
+
+
+## Package Plan ##
+
+  environment location: /home/rliubk/.conda/envs/werewolf
+
+  added / updated specs:
+    - python=3.10
+
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main 
+  _openmp_mutex      pkgs/main/linux-64::_openmp_mutex-5.1-1_gnu 
+  bzip2              pkgs/main/linux-64::bzip2-1.0.8-h5eee18b_6 
+  ca-certificates    pkgs/main/linux-64::ca-certificates-2025.2.25-h06a4308_0 
+  ld_impl_linux-64   pkgs/main/linux-64::ld_impl_linux-64-2.40-h12ee557_0 
+  libffi             pkgs/main/linux-64::libffi-3.4.4-h6a678d5_1 
+  libgcc-ng          pkgs/main/linux-64::libgcc-ng-11.2.0-h1234567_1 
+  libgomp            pkgs/main/linux-64::libgomp-11.2.0-h1234567_1 
+  libstdcxx-ng       pkgs/main/linux-64::libstdcxx-ng-11.2.0-h1234567_1 
+  libuuid            pkgs/main/linux-64::libuuid-1.41.5-h5eee18b_0 
+  ncurses            pkgs/main/linux-64::ncurses-6.4-h6a678d5_0 
+  openssl            pkgs/main/linux-64::openssl-3.0.16-h5eee18b_0 
+  pip                pkgs/main/noarch::pip-25.1-pyhc872135_2 
+  python             pkgs/main/linux-64::python-3.10.16-he870216_1 
+  readline           pkgs/main/linux-64::readline-8.2-h5eee18b_0 
+  setuptools         pkgs/main/linux-64::setuptools-78.1.1-py310h06a4308_0 
+  sqlite             pkgs/main/linux-64::sqlite-3.45.3-h5eee18b_0 
+  tk                 pkgs/main/linux-64::tk-8.6.14-h39e8969_0 
+  tzdata             pkgs/main/noarch::tzdata-2025b-h04d1e81_0 
+  wheel              pkgs/main/linux-64::wheel-0.45.1-py310h06a4308_0 
+  xz                 pkgs/main/linux-64::xz-5.6.4-h5eee18b_1 
+  zlib               pkgs/main/linux-64::zlib-1.2.13-h5eee18b_1 
+
+
+
+Downloading and Extracting Packages
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate werewolf
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+usage: conda [-h] [--no-plugins] [-V] COMMAND ...
+conda: error: argument COMMAND: invalid choice: 'activate' (choose from 'clean', 'compare', 'config', 'create', 'info', 'init', 'install', 'list', 'notices', 'package', 'remove', 'uninstall', 'rename', 'run', 'search', 'update', 'upgrade', 'build', 'content-trust', 'convert', 'debug', 'develop', 'doctor', 'index', 'inspect', 'metapackage', 'render', 'skeleton', 'env', 'pack', 'server', 'token', 'verify', 'repo')
+Defaulting to user installation because normal site-packages is not writeable
+Collecting torch==2.2.0 (from -r requirements.txt (line 1))
+  Obtaining dependency information for torch==2.2.0 from https://files.pythonhosted.org/packages/c8/02/d3adf4b4851d99a31c5a9cf7b668f171e84334945d05fb7b51c42bf41abf/torch-2.2.0-cp311-cp311-manylinux1_x86_64.whl.metadata
+  Downloading torch-2.2.0-cp311-cp311-manylinux1_x86_64.whl.metadata (25 kB)
+Collecting transformers==4.39.3 (from -r requirements.txt (line 2))
+  Obtaining dependency information for transformers==4.39.3 from https://files.pythonhosted.org/packages/15/fc/7b6dd7e1adc0a6407b845ed4be1999e98b6917d0694e57316d140cc85484/transformers-4.39.3-py3-none-any.whl.metadata
+  Downloading transformers-4.39.3-py3-none-any.whl.metadata (134 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.8/134.8 kB 6.9 MB/s eta 0:00:00
+Collecting datasets==2.18.0 (from -r requirements.txt (line 3))
+  Obtaining dependency information for datasets==2.18.0 from https://files.pythonhosted.org/packages/95/fc/661a7f06e8b7d48fcbd3f55423b7ff1ac3ce59526f146fda87a1e1788ee4/datasets-2.18.0-py3-none-any.whl.metadata
+  Downloading datasets-2.18.0-py3-none-any.whl.metadata (20 kB)
+Collecting peft==0.11.1 (from -r requirements.txt (line 4))
+  Obtaining dependency information for peft==0.11.1 from https://files.pythonhosted.org/packages/19/99/c5e0292a6d2a62e95c3dfe674ce9e8f8a9fe5d4835d3c9bb9b3e016f02ae/peft-0.11.1-py3-none-any.whl.metadata
+  Downloading peft-0.11.1-py3-none-any.whl.metadata (13 kB)
+Collecting bitsandbytes==0.41.3 (from -r requirements.txt (line 5))
+  Obtaining dependency information for bitsandbytes==0.41.3 from https://files.pythonhosted.org/packages/1b/db/1a3c0d3542484806c273e8027a328b12be69c1042bb9e134efe93ddf9b50/bitsandbytes-0.41.3-py3-none-any.whl.metadata
+  Downloading bitsandbytes-0.41.3-py3-none-any.whl.metadata (9.8 kB)
+Collecting accelerate==0.27.2 (from -r requirements.txt (line 6))
+  Obtaining dependency information for accelerate==0.27.2 from https://files.pythonhosted.org/packages/1b/da/24a54b9205fce3bdbaad521c35944d0b0a2d292ac5ae921e484b76312b43/accelerate-0.27.2-py3-none-any.whl.metadata
+  Downloading accelerate-0.27.2-py3-none-any.whl.metadata (18 kB)
+Collecting sentencepiece==0.2.0 (from -r requirements.txt (line 7))
+  Obtaining dependency information for sentencepiece==0.2.0 from https://files.pythonhosted.org/packages/fb/12/2f5c8d4764b00033cf1c935b702d3bb878d10be9f0b87f0253495832d85f/sentencepiece-0.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata
+  Downloading sentencepiece-0.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+ERROR: Could not find a version that satisfies the requirement swanlab==0.3.23 (from versions: 0.4.5, 0.4.6, 0.4.8, 0.4.9, 0.4.10, 0.4.11, 0.4.12, 0.5.0, 0.5.1, 0.5.2, 0.5.3, 0.5.4, 0.5.5, 0.5.7)
+ERROR: No matching distribution found for swanlab==0.3.23
+
+
+[1m[33m[WARN] Did you forget to load the slurm module?[39m[22m
+
+[30m[2m```[22mbash[0m
+[32m[22m# load slurm module[0m
+[31mmodule[39m avail
+[31mmodule[39m load slurm
+[30m[2m```[0m
+
+If you have loaded please unload and load again.
+
+More info:
+- 
+- [34mhttps://itsc.hkust.edu.hk/services/academic-teaching-support/high-performance-computing/superpod/submit-first-job[0m
+- [34mhttps://itsc.hkust.edu.hk/services/academic-teaching-support/high-performance-computing/superpod/slurm[0m
+
+
+[1m[34m[INFO] Slurm commands[39m[22m
+  - Cheatsheet: [34mhttps://slurm.schedmd.com/pdfs/summary.pdf[0m
+  - Interactive run for debugging: [34mhttps://slurm.schedmd.com/srun.html[0m
+  - For long production run, submit and forget: [34mhttps://slurm.schedmd.com/sbatch.html[0m
+
+
+Type ":q" to exit.
+
