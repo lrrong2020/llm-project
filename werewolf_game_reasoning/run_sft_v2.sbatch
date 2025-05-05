@@ -48,9 +48,9 @@ python train_werewolf.py --stage sft \
        --output_dir output \
        --per_device_train_batch_size 1 \
        --per_device_eval_batch_size 1 \
-       --gradient_accumulation_steps 8 \
+       --gradient_accumulation_steps 4 \
        --max_seq_len 8192 \
-       --learning_rate 2e-5 \
+       --learning_rate 1e-4 \
        --use_bf16 \
        --use_swanlab \
        --swanlab_api_key "$SWANLAB_API_KEY" \

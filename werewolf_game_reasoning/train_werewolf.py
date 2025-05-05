@@ -35,6 +35,7 @@ from peft import (
     LoraConfig,
     get_peft_model,
     prepare_model_for_kbit_training,
+    PeftModel,
 )
 import swanlab
 from swanlab.integration.transformers import SwanLabCallback
@@ -241,8 +242,16 @@ def train_sft(
     )
     base_model = prepare_model_for_kbit_training(base_model)
     
-    print(f"加载LoRA适配器: {basic_lora_dir}")
-    model = get_peft_model(base_model, LoraConfig.from_pretrained(str(basic_lora_dir)))
+    # -------------------------------------------------------
+    # 正确加载第一阶段产生的 LoRA 适配器权重，并保持其可训练
+    # -------------------------------------------------------
+    print(f"加载LoRA适配器权重: {basic_lora_dir}")
+    # 冻结基础模型参数，只训练 LoRA 层可以显著提高稳定性
+    for param in base_model.parameters():
+        param.requires_grad = False
+
+    # `PeftModel.from_pretrained` 会同时载入配置与权重
+    model = PeftModel.from_pretrained(base_model, str(basic_lora_dir), is_trainable=True)
     model.print_trainable_parameters()
 
     # 优化内存使用并禁用fp16混合精度训练
@@ -254,21 +263,18 @@ def train_sft(
         per_device_eval_batch_size=args.per_device_eval_batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
         learning_rate=args.learning_rate,
-        # 禁用FP16混合精度训练，改用BF16或纯FP32
-        fp16=False,  # 禁用FP16
-        bf16=args.use_bf16,  # 可选使用BF16，在A100/H100上更稳定
-        # 内存优化
+        lr_scheduler_type="cosine",
+        warmup_ratio=0.03,
+        max_grad_norm=1.0,
         gradient_checkpointing=True,
-        optim="adamw_torch",  # 使用PyTorch原生优化器
-        # 其他训练参数
+        fp16=False,
+        bf16=args.use_bf16,
         evaluation_strategy="steps",
         eval_steps=args.eval_steps,
         logging_steps=1,
         save_strategy="steps",
         save_steps=args.save_steps,
-        # 不使用内置的报告
         report_to="none",
-        # 额外内存优化
         ddp_find_unused_parameters=False,
         dataloader_pin_memory=False,
     )

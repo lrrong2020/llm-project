@@ -1,0 +1,85 @@
+Mon May  5 20:03:44 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.129.03             Driver Version: 535.129.03   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA H800                    On  | 00000000:9D:00.0 Off |                    0 |
+| N/A   32C    P0              69W / 700W |      4MiB / 81559MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+/home/rliubk/.conda/envs/werewolf/bin/python
+PyTorch: 2.2.0+cu121, CUDA: True, 设备: NVIDIA H800
+===== 开始 SFT 微调 (v2 - 禁用FP16) Mon May  5 08:03:47 PM HKT 2025 =====
+开始训练 - 阶段: sft
+数据目录: .
+输出目录: output
+模型路径: Qwen/Qwen2.5-1.5B
+批次大小: 1，梯度累积: 4
+评估批次大小: 1
+SwanLab: 使用提供的API密钥
+加载SFT数据集: train_zh.csv
+开始处理SFT数据: 12134 样本
+加载tokenizer: Qwen/Qwen2.5-1.5B
+使用最大序列长度: 8192
+开始tokenize数据...
+Tokenize完成，训练集大小: 10920 样本
+加载基础模型: Qwen/Qwen2.5-1.5B
+加载LoRA适配器: output/basic
+trainable params: 0 || all params: 1,548,416,512 || trainable%: 0.0000
+配置训练参数 - 禁用FP16混合精度
+正在使用API密钥登录SwanLab...
+[1m[34mswanlab[0m[0m: \ Waiting for the swanlab cloud response.[1m[34mswanlab[0m[0m: | Waiting for the swanlab cloud response.[1m[34mswanlab[0m[0m: / Waiting for the swanlab cloud response.                                                                                                    SwanLab登录成功!
+开始SFT训练...
+[1m[34mswanlab[0m[0m: \ Getting project...[1m[34mswanlab[0m[0m: | Getting project...[1m[34mswanlab[0m[0m: / Getting project...[1m[34mswanlab[0m[0m: - Getting project...[1m[34mswanlab[0m[0m: \ Getting project...[1m[34mswanlab[0m[0m: | Getting project...[1m[34mswanlab[0m[0m: / Getting project...[1m[34mswanlab[0m[0m: - Getting project...[1m[34mswanlab[0m[0m: \ Getting project...[1m[34mswanlab[0m[0m: | Getting project...[1m[34mswanlab[0m[0m: / Getting project...[1m[34mswanlab[0m[0m: - Getting project...                                                                                                    [1m[34mswanlab[0m[0m: \ Creating experiment...[1m[34mswanlab[0m[0m: | Creating experiment...[1m[34mswanlab[0m[0m: / Creating experiment...[1m[34mswanlab[0m[0m: - Creating experiment...                                                                                                    [1m[34mswanlab[0m[0m: Tracking run with swanlab version 0.5.7
+[1m[34mswanlab[0m[0m: Run data will be saved locally in [35m[1m/home/rliubk/llm-project/werewolf_game_reasoning/swanlog/run-20250505_200407-a3b1799d[0m[0m
+[1m[34mswanlab[0m[0m: 👋 Hi [1m[39msurmountrt[0m[0m, welcome to swanlab!
+[1m[34mswanlab[0m[0m: Syncing run [33msft[0m to the cloud
+[1m[34mswanlab[0m[0m: 🏠 View project at [34m[4mhttps://swanlab.cn/@surmountrt/Werewolf-LoRA[0m[0m
+[1m[34mswanlab[0m[0m: 🚀 View run at [34m[4mhttps://swanlab.cn/@surmountrt/Werewolf-LoRA/runs/oyhafubduohqrwpogbqdx[0m[0m
+{'loss': 2.5228, 'grad_norm': 0.0, 'learning_rate': 4.0650406504065046e-07, 'epoch': 0.0}
+{'loss': 2.6593, 'grad_norm': 0.0, 'learning_rate': 8.130081300813009e-07, 'epoch': 0.0}
+{'loss': 2.4221, 'grad_norm': 0.0, 'learning_rate': 1.2195121951219514e-06, 'epoch': 0.0}
+{'loss': 2.5114, 'grad_norm': 0.0, 'learning_rate': 1.6260162601626018e-06, 'epoch': 0.0}
+{'loss': 2.5334, 'grad_norm': 0.0, 'learning_rate': 2.0325203252032523e-06, 'epoch': 0.0}
+{'loss': 2.441, 'grad_norm': 0.0, 'learning_rate': 2.4390243902439027e-06, 'epoch': 0.0}
+{'loss': 2.4933, 'grad_norm': 0.0, 'learning_rate': 2.8455284552845528e-06, 'epoch': 0.0}
+{'loss': 2.5836, 'grad_norm': 0.0, 'learning_rate': 3.2520325203252037e-06, 'epoch': 0.0}
+{'loss': 2.6488, 'grad_norm': 0.0, 'learning_rate': 3.6585365853658537e-06, 'epoch': 0.0}
+{'loss': 2.3638, 'grad_norm': 0.0, 'learning_rate': 4.0650406504065046e-06, 'epoch': 0.0}
+[1m[33mswanlab[0m[0m: Step 10 on key train/epoch already exists, ignored.
+[1m[33mswanlab[0m[0m: Step 10 on key train/global_step already exists, ignored.
+{'eval_loss': 2.553285598754883, 'eval_runtime': 325.657, 'eval_samples_per_second': 3.728, 'eval_steps_per_second': 3.728, 'epoch': 0.0}
+{'loss': 2.4296, 'grad_norm': 0.0, 'learning_rate': 4.471544715447155e-06, 'epoch': 0.0}
+{'loss': 2.4927, 'grad_norm': 0.0, 'learning_rate': 4.8780487804878055e-06, 'epoch': 0.0}
+{'loss': 2.4021, 'grad_norm': 0.0, 'learning_rate': 5.2845528455284555e-06, 'epoch': 0.0}
+{'loss': 2.4588, 'grad_norm': 0.0, 'learning_rate': 5.6910569105691056e-06, 'epoch': 0.01}
+{'loss': 2.4403, 'grad_norm': 0.0, 'learning_rate': 6.0975609756097564e-06, 'epoch': 0.01}
+{'loss': 2.5587, 'grad_norm': 0.0, 'learning_rate': 6.504065040650407e-06, 'epoch': 0.01}
+{'loss': 2.4846, 'grad_norm': 0.0, 'learning_rate': 6.910569105691057e-06, 'epoch': 0.01}
+{'loss': 2.298, 'grad_norm': 0.0, 'learning_rate': 7.317073170731707e-06, 'epoch': 0.01}
+{'loss': 2.5164, 'grad_norm': 0.0, 'learning_rate': 7.723577235772358e-06, 'epoch': 0.01}
+{'loss': 2.4605, 'grad_norm': 0.0, 'learning_rate': 8.130081300813009e-06, 'epoch': 0.01}
+[1m[33mswanlab[0m[0m: Step 20 on key train/epoch already exists, ignored.
+[1m[33mswanlab[0m[0m: Step 20 on key train/global_step already exists, ignored.
+{'eval_loss': 2.553285598754883, 'eval_runtime': 325.9494, 'eval_samples_per_second': 3.725, 'eval_steps_per_second': 3.725, 'epoch': 0.01}
+{'loss': 2.5867, 'grad_norm': 0.0, 'learning_rate': 8.53658536585366e-06, 'epoch': 0.01}
+{'loss': 2.6676, 'grad_norm': 0.0, 'learning_rate': 8.94308943089431e-06, 'epoch': 0.01}
+{'loss': 2.4997, 'grad_norm': 0.0, 'learning_rate': 9.34959349593496e-06, 'epoch': 0.01}
+{'loss': 2.5969, 'grad_norm': 0.0, 'learning_rate': 9.756097560975611e-06, 'epoch': 0.01}
+{'loss': 2.5385, 'grad_norm': 0.0, 'learning_rate': 1.016260162601626e-05, 'epoch': 0.01}
+{'loss': 2.5744, 'grad_norm': 0.0, 'learning_rate': 1.0569105691056911e-05, 'epoch': 0.01}
+{'loss': 2.4829, 'grad_norm': 0.0, 'learning_rate': 1.0975609756097562e-05, 'epoch': 0.01}
+{'loss': 2.4631, 'grad_norm': 0.0, 'learning_rate': 1.1382113821138211e-05, 'epoch': 0.01}
+{'loss': 2.5924, 'grad_norm': 0.0, 'learning_rate': 1.1788617886178862e-05, 'epoch': 0.01}
+{'loss': 2.5889, 'grad_norm': 0.0, 'learning_rate': 1.2195121951219513e-05, 'epoch': 0.01}
