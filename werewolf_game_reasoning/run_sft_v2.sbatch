@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=werewolf_sft
+#SBATCH --job-name=werewolf_sft_7000
 #SBATCH --partition=normal   # 使用H800大内存GPU
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:1
@@ -47,13 +47,14 @@ python train_werewolf.py --stage sft \
        --data_dir . \
        --output_dir output \
        --per_device_train_batch_size 1 \
+       --per_device_eval_batch_size 1 \
        --gradient_accumulation_steps 8 \
-       --max_seq_len 2048 \
-       --learning_rate 1e-4 \
+       --max_seq_len 8192 \
+       --learning_rate 2e-5 \
        --use_bf16 \
-       --max_train_samples 2000 \
        --use_swanlab \
        --swanlab_api_key "$SWANLAB_API_KEY" \
        --swanlab_project "Werewolf-LoRA"
+
 
 echo "===== SFT 微调完成 $(date) =====" 

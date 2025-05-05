@@ -1,0 +1,52 @@
+/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Map:   0%|          | 0/10920 [00:00<?, ? examples/s]Map:   9%|▉         | 1000/10920 [00:09<01:37, 102.18 examples/s]Map:  18%|█▊        | 2000/10920 [00:14<01:01, 143.87 examples/s]Map:  27%|██▋       | 3000/10920 [00:19<00:46, 171.84 examples/s]Map:  37%|███▋      | 4000/10920 [00:23<00:35, 193.20 examples/s]Map:  46%|████▌     | 5000/10920 [00:27<00:28, 206.79 examples/s]Map:  55%|█████▍    | 6000/10920 [00:31<00:22, 218.48 examples/s]Map:  64%|██████▍   | 7000/10920 [00:35<00:17, 225.04 examples/s]Map:  73%|███████▎  | 8000/10920 [00:40<00:12, 230.22 examples/s]Map:  82%|████████▏ | 9000/10920 [00:44<00:08, 234.91 examples/s]Map:  92%|█████████▏| 10000/10920 [00:48<00:03, 239.20 examples/s]Map: 100%|██████████| 10920/10920 [00:51<00:00, 242.46 examples/s]Map: 100%|██████████| 10920/10920 [00:51<00:00, 210.05 examples/s]
+Map:   0%|          | 0/1214 [00:00<?, ? examples/s]Map:  82%|████████▏ | 1000/1214 [00:09<00:01, 110.01 examples/s]Map: 100%|██████████| 1214/1214 [00:10<00:00, 122.62 examples/s]Map: 100%|██████████| 1214/1214 [00:10<00:00, 118.54 examples/s]
+  0%|          | 0/4095 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/torch/utils/checkpoint.py:460: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  0%|          | 1/4095 [00:06<7:55:44,  6.97s/it]                                                    0%|          | 1/4095 [00:06<7:55:44,  6.97s/it]  0%|          | 2/4095 [00:13<7:44:15,  6.81s/it]                                                    0%|          | 2/4095 [00:13<7:44:15,  6.81s/it]  0%|          | 3/4095 [00:20<7:40:20,  6.75s/it]                                                    0%|          | 3/4095 [00:20<7:40:20,  6.75s/it]  0%|          | 4/4095 [00:27<7:38:22,  6.72s/it]                                                    0%|          | 4/4095 [00:27<7:38:22,  6.72s/it]  0%|          | 5/4095 [00:33<7:37:31,  6.71s/it]                                                    0%|          | 5/4095 [00:33<7:37:31,  6.71s/it]  0%|          | 6/4095 [00:40<7:36:46,  6.70s/it]                                                    0%|          | 6/4095 [00:40<7:36:46,  6.70s/it]  0%|          | 7/4095 [00:47<7:36:25,  6.70s/it]                                                    0%|          | 7/4095 [00:47<7:36:25,  6.70s/it]  0%|          | 8/4095 [00:53<7:35:57,  6.69s/it]                                                    0%|          | 8/4095 [00:53<7:35:57,  6.69s/it]  0%|          | 9/4095 [01:00<7:35:17,  6.69s/it]                                                    0%|          | 9/4095 [01:00<7:35:17,  6.69s/it]  0%|          | 10/4095 [01:07<7:34:48,  6.68s/it]                                                     0%|          | 10/4095 [01:07<7:34:48,  6.68s/it]  File "/home/rliubk/llm-project/werewolf_game_reasoning/train_werewolf.py", line 393, in <module>
+    main()
+  File "/home/rliubk/llm-project/werewolf_game_reasoning/train_werewolf.py", line 389, in main
+    train_sft(args.model_dir, basic_dir, sft_dir, data_dir, args)
+  File "/home/rliubk/llm-project/werewolf_game_reasoning/train_werewolf.py", line 318, in train_sft
+    trainer.train()
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 2193, in _inner_training_loop
+    self._maybe_log_save_evaluate(tr_loss, grad_norm, model, trial, epoch, ignore_keys_for_eval)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 2577, in _maybe_log_save_evaluate
+    metrics = self.evaluate(ignore_keys=ignore_keys_for_eval)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 3365, in evaluate
+    output = eval_loop(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 3554, in evaluation_loop
+    loss, logits, labels = self.prediction_step(model, inputs, prediction_loss_only, ignore_keys=ignore_keys)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 3771, in prediction_step
+    loss, outputs = self.compute_loss(model, inputs, return_outputs=True)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/trainer.py", line 3059, in compute_loss
+    outputs = model(**inputs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/accelerate/utils/operations.py", line 817, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/accelerate/utils/operations.py", line 805, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/torch/amp/autocast_mode.py", line 16, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/peft/peft_model.py", line 1430, in forward
+    return self.base_model(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 179, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1192, in forward
+    shift_logits = logits[..., :-1, :].contiguous()
+CUDA out of memory. Tried to allocate 31.69 GiB. GPU 0 has a total capacity of 79.11 GiB of which 30.43 GiB is free. Including non-PyTorch memory, this process has 48.67 GiB memory in use. Of the allocated memory 38.35 GiB is allocated by PyTorch, and 9.60 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  0%|          | 10/4095 [01:14<8:29:20,  7.48s/it]

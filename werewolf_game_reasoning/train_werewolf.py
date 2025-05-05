@@ -138,6 +138,7 @@ def train_basic(
         output_dir=str(output_dir),
         num_train_epochs=args.num_train_epochs,
         per_device_train_batch_size=args.per_device_train_batch_size,
+        per_device_eval_batch_size=args.per_device_eval_batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
         learning_rate=args.learning_rate,
         fp16=True,
@@ -250,6 +251,7 @@ def train_sft(
         output_dir=str(output_dir),
         num_train_epochs=args.num_train_epochs,
         per_device_train_batch_size=args.per_device_train_batch_size,
+        per_device_eval_batch_size=args.per_device_eval_batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
         learning_rate=args.learning_rate,
         # 禁用FP16混合精度训练，改用BF16或纯FP32
@@ -333,6 +335,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--data_dir", default=".")
     p.add_argument("--output_dir", default="output", help="root output folder")
     p.add_argument("--per_device_train_batch_size", type=int, default=4)
+    p.add_argument("--per_device_eval_batch_size", type=int, default=1)
     p.add_argument("--gradient_accumulation_steps", type=int, default=8)
     p.add_argument("--num_train_epochs", type=int, default=3)
     p.add_argument("--learning_rate", type=float, default=2e-4)
@@ -365,7 +368,7 @@ def main():
     print(f"输出目录: {root_out}")
     print(f"模型路径: {args.model_dir}")
     print(f"批次大小: {args.per_device_train_batch_size}，梯度累积: {args.gradient_accumulation_steps}")
-    
+    print(f"评估批次大小: {args.per_device_eval_batch_size}")
     if args.use_swanlab:
         if args.swanlab_api_key:
             print("SwanLab: 使用提供的API密钥")
