@@ -20,7 +20,7 @@ def parse_args():
     p.add_argument("--base_model", default="Qwen/Qwen2.5-1.5B", help="Base model path")
     p.add_argument("--data_dir", default=".", help="Data directory")
     p.add_argument("--num_examples", type=int, default=10, help="Number of examples to evaluate")
-    p.add_argument("--max_new_tokens", type=int, default=128)
+    p.add_argument("--max_new_tokens", type=int, default=1000)
     return p.parse_args()
 
 def format_sft(example):
