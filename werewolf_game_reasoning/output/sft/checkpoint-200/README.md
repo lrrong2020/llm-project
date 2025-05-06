@@ -1,5 +1,5 @@
 ---
-base_model: Qwen/Qwen2.5-1.5B
+base_model: Qwen/Qwen2.5-3B
 library_name: peft
 ---
 

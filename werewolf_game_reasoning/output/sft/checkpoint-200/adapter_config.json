@@ -1,7 +1,7 @@
 {
   "alpha_pattern": {},
   "auto_mapping": null,
-  "base_model_name_or_path": "Qwen/Qwen2.5-1.5B",
+  "base_model_name_or_path": "Qwen/Qwen2.5-3B",
   "bias": "none",
   "fan_in_fan_out": false,
   "inference_mode": true,
@@ -20,8 +20,8 @@
   "rank_pattern": {},
   "revision": null,
   "target_modules": [
-    "mlp.up_proj",
     "mlp.down_proj",
+    "mlp.up_proj",
     "c_attn"
   ],
   "task_type": "CAUSAL_LM",
