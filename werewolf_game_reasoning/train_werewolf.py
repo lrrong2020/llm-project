@@ -56,13 +56,14 @@ def get_bnb_4bit_config() -> BitsAndBytesConfig:
 def build_lora_cfg() -> LoraConfig:
     """LoRA hyper-parameters (shared across stages)."""
     return LoraConfig(
-        r=8,
-        lora_alpha=32,
-        target_modules=[
-            "c_attn",  # Qwen uses c_attn instead of q_proj/k_proj/v_proj
-            "mlp.down_proj",
-            "mlp.up_proj",
-        ],
+        r=16,
+        lora_alpha=64,
+        # target_modules=[
+        #     "c_attn",  # Qwen uses c_attn instead of q_proj/k_proj/v_proj
+        #     "mlp.down_proj",
+        #     "mlp.up_proj",
+        # ],
+        target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "mlp.down_proj", "mlp.up_proj"],
         lora_dropout=0.2,
         bias="none",
         task_type="CAUSAL_LM",
@@ -93,6 +94,7 @@ def build_tokenize_fn(tokenizer, max_len: int, truncate_only_first: bool = False
     """Return a callable for `datasets.map` that tokenises & creates labels."""
 
     def _fn(examples):
+        response_start_token_id = tokenizer.encode("<Response>", add_special_tokens=False)[0]
         toks = tokenizer(
             examples["text"],
             padding="max_length",
@@ -100,7 +102,15 @@ def build_tokenize_fn(tokenizer, max_len: int, truncate_only_first: bool = False
             max_length=max_len,
             return_tensors="pt",
         )
-        toks["labels"] = toks["input_ids"].clone()
+        labels = toks["input_ids"].clone()
+        for i in range(len(labels)):
+            # 找到 <Response> 的起始位置
+            start_pos = (toks["input_ids"][i] == response_start_token_id).nonzero(as_tuple=True)[0]
+            if len(start_pos) > 0:
+                labels[i, :start_pos.item()] = -100  # 忽略 instruction + prompt 的 loss
+        toks["labels"] = labels
+        
+        # toks["labels"] = toks["input_ids"].clone()
         return toks
 
     return _fn
@@ -120,6 +130,7 @@ def train_basic(
         "csv", data_files=str(data_dir / "game_strategy_and_term.csv")
     )["train"].map(format_basic, remove_columns=["prompt", "response"])
     data_split = dataset.train_test_split(test_size=0.1, seed=42)
+    # data_split = dataset.train_test_split(test_size=0.0001, seed=42)
 
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
     token_fn = build_tokenize_fn(tokenizer, args.max_seq_len)
@@ -143,10 +154,13 @@ def train_basic(
         fp16=True,
         evaluation_strategy="steps",
         eval_steps=args.eval_steps,
+        lr_scheduler_type="linear",
+        warmup_ratio=0.1,
         logging_steps=1,
         save_strategy="steps",
         save_steps=args.save_steps,
         report_to="none",  # SwanLab handled via callback
+        # load_best_model_at_end=True  # 自动加载最佳模型
     )
 
     # 设置回调
@@ -206,8 +220,17 @@ def train_sft(
 ):
     """Second-stage SFT; loads LoRA from `basic_lora_dir`."""
 
-    print(f"加载SFT数据集: {data_dir / 'train_zh.csv'}")
-    dataset = load_dataset("csv", data_files=str(data_dir / "train_zh.csv"))["train"]
+    # print(f"加载SFT数据集: {data_dir / 'train_zh.csv'}")
+    # dataset = load_dataset("csv", data_files=str(data_dir / "train_zh.csv"))["train"]
+    print(f"加载SFT数据集: {data_dir / 'train_zh_part_1.csv'}")
+    dataset = load_dataset("csv", data_files=str(data_dir / "train_zh_part_1.csv"))["train"]
+    
+    # print(f"加载SFT数据集: {data_dir / 'vote_zh.csv'}")
+    # dataset = load_dataset("csv", data_files=str(data_dir / "vote_zh.csv"))["train"]
+    # print(f"加载SFT数据集: {data_dir / 'speech_zh.csv'}")
+    # dataset = load_dataset("csv", data_files=str(data_dir / "speech_zh.csv"))["train"]
+    # print(f"加载SFT数据集: {data_dir / 'action_zh.csv'}")
+    # dataset = load_dataset("csv", data_files=str(data_dir / "action_zh.csv"))["train"]
     
     # 可选: 只使用部分数据进行训练
     if args.max_train_samples > 0:
@@ -219,8 +242,11 @@ def train_sft(
         format_sft,
         remove_columns=["instruction", "prompt", "response", "meta"],
     )
-    data_split = dataset.train_test_split(test_size=0.1, seed=42)
-
+    # data_split = dataset.train_test_split(test_size=0.1, seed=42)
+    data_split = dataset.train_test_split(test_size=0.001, seed=42)
+    # data_split = dataset.train_test_split(test_size=0.01, seed=42)
+    # data_split = dataset.train_test_split(test_size=0.01, seed=42)
+    
     print(f"加载tokenizer: {model_name}")
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
     
@@ -258,9 +284,15 @@ def train_sft(
         # 内存优化
         gradient_checkpointing=True,
         optim="adamw_torch",  # 使用PyTorch原生优化器
+        lr_scheduler_type="cosine",
+        warmup_ratio=0.03,
+        max_grad_norm=1.0,
         # 其他训练参数
-        evaluation_strategy="steps",
-        eval_steps=args.eval_steps,
+        # evaluation_strategy="steps",
+        # eval_steps=args.eval_steps,
+        # load_best_model_at_end=True  # 自动加载最佳模型
+        evaluation_strategy="no",
+        do_eval=False,
         logging_steps=1,
         save_strategy="steps",
         save_steps=args.save_steps,
@@ -335,9 +367,11 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--per_device_train_batch_size", type=int, default=4)
     p.add_argument("--gradient_accumulation_steps", type=int, default=8)
     p.add_argument("--num_train_epochs", type=int, default=3)
-    p.add_argument("--learning_rate", type=float, default=2e-4)
+    # p.add_argument("--num_train_epochs", type=int, default=1)
+    p.add_argument("--learning_rate", type=float, default=1e-3)
     p.add_argument("--max_seq_len", type=int, default=2048)
     p.add_argument("--eval_steps", type=int, default=10)
+    # p.add_argument("--eval_steps", type=int, default=1)
     p.add_argument("--save_steps", type=int, default=100)
     
     # SwanLab相关参数
