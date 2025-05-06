@@ -1,0 +1,55 @@
+Map:   0%|          | 0/12134 [00:00<?, ? examples/s]Map:  16%|█▋        | 2000/12134 [00:00<00:00, 16312.00 examples/s]Map:  33%|███▎      | 4000/12134 [00:00<00:00, 16399.45 examples/s]Map:  49%|████▉     | 6000/12134 [00:00<00:00, 16738.10 examples/s]Map:  66%|██████▌   | 8000/12134 [00:00<00:00, 16198.20 examples/s]Map:  82%|████████▏ | 10000/12134 [00:00<00:00, 16724.51 examples/s]Map:  99%|█████████▉| 12000/12134 [00:00<00:00, 17337.10 examples/s]Map: 100%|██████████| 12134/12134 [00:00<00:00, 14363.20 examples/s]
+/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Traceback (most recent call last):
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/rliubk/.local/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/output/sft/resolve/main/adapter_config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/peft/config.py", line 197, in _get_peft_type
+    config_file = hf_hub_download(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 961, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1068, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1596, in _raise_on_head_call_error
+    raise head_call_error
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1484, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1401, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 285, in _request_wrapper
+    response = _request_wrapper(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 459, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-68198269-06391a0260092f3d540b2a09;d42d0576-d1d0-4bd1-8627-75feb6244f65)
+
+Repository Not Found for url: https://huggingface.co/output/sft/resolve/main/adapter_config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rliubk/llm-project/werewolf_game_reasoning/eval_sft.py", line 160, in <module>
+    main() 
+  File "/home/rliubk/llm-project/werewolf_game_reasoning/eval_sft.py", line 119, in main
+    model = PeftModel.from_pretrained(base_model, args.model_dir, is_trainable=False)
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/peft/peft_model.py", line 372, in from_pretrained
+    PeftConfig._get_peft_type(
+  File "/home/rliubk/.conda/envs/werewolf/lib/python3.10/site-packages/peft/config.py", line 203, in _get_peft_type
+    raise ValueError(f"Can't find '{CONFIG_NAME}' at '{model_id}'")
+ValueError: Can't find 'adapter_config.json' at 'output/sft'
